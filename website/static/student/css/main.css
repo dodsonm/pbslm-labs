@@ -3522,6 +3522,12 @@ menu {
   .student-explorer .slide {
     height: 320px;
   }
+  .student-explorer .slide .subject-panel {
+    font-size: 14px;
+  }
+  .student-explorer .slide .subject-panel h2 {
+    font-size: 22px!important;
+  }
 }
 @media (min-width: 1020px) {
   .student-explorer .slide {
