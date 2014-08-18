@@ -1,0 +1,148 @@
+/*------------------------------------*\
+    $GLOBAL TYPOGRAPHY
+\*------------------------------------*/
+/**
+ * These are global styles, duh.
+ */
+
+.normal {
+	font-style: normal;
+	font-weight: normal;
+}
+
+.strong {
+	font-family: @bold;
+	.normal;
+}
+
+.italic {
+	font-family: @italic;
+	.normal;
+}
+
+.black {
+	font-family: @black;
+	.normal;
+}
+
+.light {
+	font-family: @light;
+	.regular;
+}
+
+.regular {
+	font-family: @regular;
+	.normal;
+}
+
+.condensed {
+	font-family: @conreg;
+	.normal;
+}
+
+.condensed-italic {
+	font-family: @conitalic;
+	.normal;
+}
+
+@base-type-size: 16px;
+@min-type-size: (@base-type-size * 0.875); 		// 14px
+@bigger-type-size: (@base-type-size * 1.125); 	// 18px
+@large-type-size: (@base-type-size * 1.25); 	// 20px
+@large-plus-type-size: (@min-type-size * 1.5); 	// 21px
+@larger-type-size: (@base-type-size * 1.5); 	// 24px
+@x-large--type-size: (@large-type-size * 1.3); 	// 26px
+@xx-large-type-size: (@base-type-size * 2); 	// 32px
+
+
+.fs-base {
+	font-size: @min-type-size;
+}
+
+.fs-big {
+	font-size: @base-type-size;
+}
+
+.fs-bigger {
+	font-size: @bigger-type-size;
+}
+
+.fs-large {
+	font-size: @large-type-size;
+}
+
+.fs-larger {
+	font-size: @larger-type-size;
+}
+
+.fs-x-large {
+	font-size: @x-large--type-size;
+}
+
+.fs-xx-large {
+	font-size: @xx-large-type-size;
+}
+
+body {
+	font: @body-font;
+	color: @body-text;
+	text-align: left;
+	line-height: 1.846;
+}
+
+strong {
+	.strong;
+}
+
+h1 {
+	font: @h1-font;
+	color: @h1;
+}
+
+h2 {
+	font: @h2-font;
+	color: @h2;
+}
+
+h1, h2 {
+	margin-bottom: 10px;
+}
+
+h3 {
+	font: @h3-font;
+	color: @h3;
+}
+
+h4 {
+	font: @h4-font;
+	color: @h4;
+}
+
+h3, h4 {
+	margin-bottom: 5px;
+}
+h4 {
+	text-transform: uppercase;
+}
+.accent-text {
+	font: 20px/27px @flower;
+}
+
+h5 {
+	font-size: @large-plus-type-size;
+	line-height: 1.19;
+}
+
+address {
+	.normal;
+}
+
+.flower {
+	font-family: @flower;
+	.normal;
+}
+
+/* overwriting bootstrap */
+label {
+	font: @body-font;
+}

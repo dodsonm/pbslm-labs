@@ -1,0 +1,350 @@
+/*------------------------------------*\
+    $SEARCH-BAR
+\*------------------------------------*/
+
+@search-bar-height: 74px;
+
+.search-container {
+	background-color: white;	
+	border-top: 1px solid @lightgray;
+	border-bottom: 1px solid @lightgray;
+	margin-bottom: @gutter;	
+	text-align:center;
+	@media (min-width:@screen-md-min) {
+		margin-bottom: 32px;
+	}	
+	a {
+		text-decoration: none;
+		&:focus {
+			outline: 0;
+		}
+		&:hover, &:visited {
+			text-decoration: none;
+		}
+	}
+	.national .home& {
+		margin-top: 62px;
+		@media(min-width: @screen-sm-min) {
+			margin-top: 0;
+		}
+	}
+}
+
+.browse-btns {
+	width: 100%;
+	@media (min-width:@screen-sm-min) {
+		float: left;
+		width: 440px;
+	}
+	@media (min-width:@screen-md-min) {
+		width: 508px;
+	}
+	@media (min-width:@screen-lg-min) {
+		width: 542px;
+	}
+	.home & {
+		a {
+			display: block;
+		}
+	}
+}
+
+.browse-grade, .browse-standards {
+	width: 100%;
+	height: 46px;
+	border-top: 1px solid @lightgray;
+}
+.bar-btn-container {
+	position: relative;
+}
+.bar-btn {
+	border-left: 1px solid @lightgray;
+	border-right: 1px solid @lightgray;
+	display: table-cell;
+	width: 64px;
+	min-width: 64px;
+}
+.browse-grade, .browse-standards, .bar-btn {
+	padding-top: 12px;
+	font: 700 16px @roboto-condensed;
+	color: @darkestgray;
+	text-transform: uppercase;
+	text-align: center;
+	&:visited, &:active {
+		color: @darkestgray;
+	}
+	@media (min-width: @screen-sm-min) {
+		height: @search-bar-height;
+		padding-top: 24px;
+		border-top:0;
+		border-bottom: 0;
+		border-right: 1px solid @lightgray;
+	}
+	@media(min-width: @screen-md-min) {
+		font-size: 18px;
+	}
+}
+
+.browse-grade {
+	&:hover,
+	&.active {
+		color: @darkgreen;
+	}
+	i {
+		position: relative;
+		top: -2px;
+		margin: 0;
+	}
+	@media (min-width:@screen-sm-min) {
+		float: right;
+		width: 260px;
+	}
+	@media (min-width:@screen-md-min) {
+		width: 286px;
+	}
+	@media (min-width:@screen-lg-min) {
+		width: 300px;
+	}
+}
+
+.browse-standards {
+	&:hover,
+	&.active {
+		color: #fff;
+		background-color: @darkgreen;
+	}
+	@media (min-width:@screen-sm-min) {
+		float: left;
+		width: 180px;
+	}
+	@media (min-width:@screen-md-min) {
+		width: 222px;
+	}
+}
+
+.search-input-container {
+	position: relative;
+	width: 100%;
+	text-align: left;
+	height: 46px;
+	input {
+		width: 98%;	//this style is for inner page search input
+		font: @bigger-type-size @regular;
+		background: transparent;	
+		text-align: left;
+		border: 0;
+		-webkit-appearance:none;
+		&:focus {
+			outline: 0;
+		}
+		@media (min-width: @screen-sm-min) {
+			font-size: 25px;
+			padding-top: 10px;
+		}
+	}
+	i {
+		position: absolute;
+		top: 6px;
+		margin:0;
+		.fs-large;
+		@media (min-width: @screen-sm-min) {
+			font-size: 30px;
+			width: 40px;
+		}
+	}
+}
+.home .search-input-container {
+	@media (min-width:@screen-sm-min) {
+		float: right;
+		width: 270px;
+		height: 74px;
+	}
+	@media (min-width:@screen-md-min) {
+		width: 456px;
+	}
+	@media (min-width:@screen-lg-min) {
+		width: 700px;
+	}
+	input {
+		padding: 12px 24px;
+		@media (min-width: @screen-sm-min) {
+			padding-left: 36px;
+			height: 74px;
+		}
+	}
+}
+
+
+.dashboard {
+	position: relative;
+	color: #000;
+	&:hover {
+		color: @darkgreen;
+	}
+	.icon-wrap {
+		top: -18px;
+	}
+	.lm {
+		color: @darkgreen;
+	}
+	.lm-dashboard {
+		position: absolute;
+		font-size: 32px;
+		line-height: 20px;
+		margin-left: -16px;
+	}
+	@media (min-width:@screen-sm-min) {
+		.lm-dashboard {
+			top: 0px;
+			left: -36px;
+		}
+		width: 230px;
+		min-width: 230px;
+	}
+	@media (min-width:@screen-md-min) {
+
+		width: 250px;
+		min-width: 250px;
+	}
+	@media (min-width:@screen-lg-min) {
+		width: 260px;
+		min-width: 260px;
+	}
+}
+
+.dashboard-text {
+	position: relative;
+}
+
+.dashboard-subtext {
+	position: absolute;
+	left: 0;
+	top: 22px;
+	width: 160px;
+	text-align: left;
+	color: @darkgray;
+	font-size: 14px;
+	text-transform: none;
+	font-weight: 400;
+}
+
+.browse-options {
+	position: relative;
+	&:hover,
+	&.active {
+		color: @darkgreen;
+	}
+	.lm-triangle-down {
+		position: absolute;
+		top: 15px;
+		margin: 0;
+		right: 6px;
+	}
+	.lm-search {
+		position: absolute;
+		left: 22px;
+		top: 8px;
+	}
+	@media (min-width:@screen-sm-min) {
+		width: 190px;
+		min-width: 190px;
+		.lm-triangle-down {
+			position: static;
+		}
+	}
+	@media (min-width:@screen-md-min) {
+		width: 232px;
+		min-width: 232px;
+	}
+}
+
+.resource .search-input-container {
+	display: table-cell;
+	width: 100%;
+	padding-left: 36px;
+	i {
+		position: absolute;
+		top: 0;
+		left: -24px;
+	}
+	input {
+		border-bottom: 1px solid @lightgray;
+	}
+}
+
+.search-form-filters {
+	border-top: 1px solid @lightgray;
+	display: none;
+	width: 100%;
+	text-transform: none;
+	text-align: center;
+	@media (min-width: @screen-sm-min) {
+		background-color: white;
+		width: @sm-max-width;
+		padding-top: (@gutter/2);
+		padding-bottom: (@gutter/2);
+	}
+	@media (min-width: @screen-md-min) {
+		width: @md-max-width;
+	}
+	@media (min-width: @screen-lg-min) {
+		width: @max-width;
+	}
+	fieldset {
+		text-align: left;
+		width: 80%;
+		margin: 0 auto;
+		border: none;
+		@media (min-width: @screen-sm-min) {
+			padding:0;
+			width: 50%;
+			float:left;
+			margin-bottom: @gutter;
+		}
+		@media (max-width: @screen-md-min) {
+			.two-cols > li {
+				width:100%;
+			}
+		}		
+	}
+	input[type="checkbox"],
+	input[type="radio"] {
+		margin-bottom: 0.5em;
+	}
+	.subject-select {
+		width: 100%;
+		margin-bottom: 12px;
+		.fs-big;
+		padding: 16px;
+		background: transparent;
+		line-height: 1;
+		border-radius: 0;
+		border: 1px solid @lightgray;
+	}
+	li {
+		border: none;
+		line-height: 1.3;
+		padding: 4px 0;
+		input {
+			margin-right: 6px;
+		}
+	}
+	.search-form-submit {
+		background-color: @darkgreen;
+		color: white;
+		border: none;
+		text-transform: uppercase;
+		padding: 18px;
+		margin-bottom: @gutter;
+		&:hover {
+			.hover-knockback;
+		}
+		@media (min-width: @screen-sm-min) {
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+	}
+}
+.no-js .search-form-filters {
+	display: block;
+}

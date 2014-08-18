@@ -1,0 +1,20 @@
+// Bordered & Pulled
+// -------------------------
+
+.@{lm-css-prefix}-border,
+.@{lmh-css-prefix}-border,
+.@{ps-css-prefix}-border {
+  padding: .2em .25em .15em;
+  border: solid .08em @lm-border-color;
+  border-radius: .1em;
+}
+
+.pull-right { float: right; }
+.pull-left { float: left; }
+
+.@{lm-css-prefix},
+.@{lmh-css-prefix},
+.@{ps-css-prefix} {
+  &.pull-left { margin-right: .3em; }
+  &.pull-right { margin-left: .3em; }
+}

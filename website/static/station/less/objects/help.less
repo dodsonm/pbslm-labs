@@ -1,0 +1,96 @@
+.section-head, .help-topics-container {
+	border: 1px solid @bordergray;
+}
+.section-head {
+	padding: 18px 8px;
+	@media(min-width: @screen-sm-min) {
+		padding: 12px 6px 12px 12px;
+	}
+	a {
+		color: #000;
+	}
+	.lm {
+		margin-right: 6px;
+		color: @darkorange;
+		&:hover {
+			color: @lighterorange;
+		}
+	}
+}
+
+.help-topics-container {
+	border-bottom: 0;
+	display: none;
+	.js-open& {
+		border-top: 0;
+		display: block;
+	}
+	@media(min-width: @screen-md-min) {
+		display: block;
+	}
+}
+.help-topics {
+	li {
+		border-bottom: 1px solid @bordergray;
+		padding: 18px 8px;
+		@media(min-width: @screen-sm-min) {
+			padding: 12px 6px 12px 12px;
+		}
+	}
+	a {
+		color: @lightergreen;
+	}
+	.help-sub-topics {
+		padding: 0 12px;
+		li {
+			&:last-of-type {
+				border-bottom: 0;
+			}
+		}
+	}
+}
+.section-content {
+	padding-left: 24px;
+	padding-right: 20px;
+	ul {
+		margin: 0 0 10px 25px;
+	}
+	li {
+		list-style: none;
+	}
+	img {
+		max-width: 100%;
+	}
+}
+#form-title {
+	//the form markup comes from an AJAX call and renders this element invisible
+	// the only way to style it is with and ID - this is needed until we remove that
+	//element
+	height: 0;
+}
+.modal-header {
+	h3 {
+		margin-top: 0;
+	}
+}
+.control-group {
+	margin-bottom: 8px;
+}
+.form-horizontal {
+	button {
+		color: #fff;
+		padding: 8px 12px;
+		margin-top: 24px;
+		background-color: @lighterorange;
+		&:hover {
+			color: #fff;
+			background-color:@darkorange;
+		}
+	}
+	input, textarea {
+		width: 350px;
+		padding: 6px;
+		border: 1px solid @bordergray;
+		outline: 0;
+	}
+}

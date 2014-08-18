@@ -1,0 +1,60 @@
+// this is a modified version of the media tools LESS file - to be shared with the innner pages and ARCT
+
+.media-tools__aside {
+    //padding-right: 0!important;
+}
+.page-title {
+    color: #353d46;
+    font: normal 300 30px @conreg;  // This font-family is incorrect - it needs to be replaced with roboto light so that the weight will work
+    margin: 0;
+}
+.media-tools__main {
+    //padding-left: 0!important;
+    position: relative;
+
+    .page-title {
+
+        border-bottom: 1px solid #dce0e5;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+
+        i {
+            position: relative;
+            top: 3px;
+            color: #76b93c;
+            margin-right: 0;
+        }
+
+        .label {
+            font-size: 12px;
+            vertical-align: middle;
+            position: relative;
+            top: -3px;
+            border-radius: 0;
+        }
+    }
+
+    .pill {
+        border-radius: 3px;
+        border: 1px solid #dce0e5;
+        padding: 10px;
+        font: normal 16px/21px @regular;
+        color: #556270;
+        margin-bottom: 15px;
+
+        a { display: block; }
+
+        p { color: #556270; }
+
+        .coming-soon p { color: gray; }
+
+        h3 {
+            font: normal 23px @light;
+            color: #e68000;
+        }
+
+        &:last-child { margin-bottom: 0; }
+
+        &:hover { background-color: #f7f6f3; }
+    }
+}

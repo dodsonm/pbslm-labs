@@ -1,0 +1,281 @@
+// !!! PLEASE KEEP ALL PROPERTIES IN THE CSS RULES IN ALPHABETICAL ORDER !!!
+
+// Rafactor Note: May want to rethink how deeply some of these rules are
+// nested -- especially in the main list, 'article ul.favorites' -mld
+
+// Refactore Note: Need to decide on px or em or rem. The original rules used
+// em/rem, but switched to px for the sake of time. Probably can wait until
+// responsive implementation this autumn. -mld
+
+// main list
+article ul.favorites {
+  list-style: none;
+  width: 100%;
+
+  & > li {
+    .clearfix();
+    background: #fff;
+    border: solid 1px @standard-border-color;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    &:first-child {
+      margin-top: 0;
+    };
+
+    .detail {
+      .clearfix;
+
+      .readonly & {
+        min-height: 155px;
+      }
+
+
+      .data {
+        .clearfix();
+        padding-bottom: 10px;
+        margin-top: 15px;
+        padding-left: 15px;
+        border-bottom: solid 1px #ececec;
+
+        body.folder & {
+          padding-left: 20px;
+        }
+
+        .readonly & {
+          padding-bottom: 0;
+          padding-left: 10px;
+          border: none;
+        }
+        .media {
+          float: left;
+
+          .selector {
+            border-radius: 0;
+            border-color: #ccc;
+            left: 4px;
+            margin: 0;
+            position: absolute;
+            top: 4px;
+          }
+          .illo {
+            //background-image: url('../img/_fpo/video.png');
+            //background-size: cover;
+            background-color: #000;
+            height: 127px;
+            margin: 0 5px;
+            position: relative;
+            width: 200px;
+            text-align: center;
+
+            body.folder & {
+              margin-left: 15px;
+            }
+
+            figcaption {
+              background: #333;
+              bottom: 0;
+              color: #fff;
+              font-size: .75em;
+              line-height: 15px;
+              padding: 1% 2%;
+              position: absolute;
+              text-align: left;
+              text-transform: uppercase;
+              //width: 96%;
+            }
+          }
+        }
+        .meta {
+          color: #666;
+          float: left;
+          font-size: 13px;
+          margin-left: 5px;
+          width: 150px;
+
+          body.folder & {
+            margin-top: 5px;
+          }
+
+          /* Large desktop */
+          @media (min-width: 1200px) {
+            width: 250px;
+          }
+
+          .external-link {
+            color: @favorite-external-link-color;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+article {
+  ul.folders {
+    list-style: none;
+    & > li {
+      background-color: white;
+      border: solid 1px @standard-border-color;
+      margin: 10px 0;
+      padding: 5px 30px;
+      position: relative;
+      min-height: 42px;
+
+      span {
+        display: none;
+      }
+      .selector {
+        left: 10px;
+        position: absolute;
+        top: 5px;
+      }
+    }
+  }
+}
+
+// copied
+.page_navigation {
+  background-color: #fff;
+  border: solid 1px @standard-border-color;
+  display: none;
+  padding: 15px;
+  text-align: center;
+  a {
+    color: @item-link-color;
+    margin: 0 10px;
+    display: inline-block;
+  }
+  .active_page {
+    color: #2f85ba;
+    cursor: default;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .no_more {
+    display:none;
+  }
+}
+
+
+.listing {
+  .controls {
+    background-color: #fff;
+    border: solid 1px @standard-border-color;
+    margin-bottom: 15px;
+
+    .head {
+      .clearfix();
+      border-bottom: solid 1px @item-border-color;
+
+      p {
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+    }
+    .sorter-wrapper {
+      float: right;
+      font-size: 11px;
+      margin: 4px 4px 0 0;
+
+      & > label {
+        float: left;
+        position: relative;
+        right: 5px;
+        top: 2px;
+      }
+      label {
+        font-size: inherit;
+      }
+
+      .dd-container {
+        float: right;
+
+        a {
+          color: #000;
+          font-size: inherit;
+          font-weight: normal;
+        }
+
+        .dd-selected, .dd-option {
+          font-size: inherit;
+          padding: 2px 0 0 5px;
+        }
+      }
+    }
+    h2 {
+      border-bottom-color: @standard-border-color;
+      color: @steelblue;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 3.143em;
+      margin: 0;
+      padding-left: 15px;
+
+    }
+
+    & > ul {
+      .clearfix();
+      font-size: 12px;
+      list-style: none;
+
+      li {
+        float: left;
+        line-height: 50px;
+        margin: 0 10px;
+
+        input[type="checkbox"] {
+          margin-right: 5px;
+          position: relative;
+          top: -3px;
+        }
+
+        a {
+          background-color: @button-background-color;
+          border: solid 1px @standard-border-color;
+          display: inline-block;
+          line-height: 22px;
+          padding: 0 5px 0 3px;
+
+          &:hover {
+            background-color: @button-background-color-hover;
+            color: @link-color;
+            text-decoration: none;
+          }
+
+          &.disabled {
+            color: #9c9c9c;
+            cursor: default;
+
+            &:hover {
+              background-color: @button-background-color;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+    .readonly & {
+      display: none;
+    }
+  }
+
+}
+
+aside .folders li .main-content {
+  display: none;
+}
+aside .folders li .selector {
+  display: none;
+}
+
+.notes .lm-pencil,
+.listing .lm-pencil {
+  .readonly & {
+    display: none;
+  }
+}
+

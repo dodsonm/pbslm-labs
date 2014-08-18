@@ -1,0 +1,347 @@
+/*------------------------------------*\
+    $tile-ITEM
+\*------------------------------------*/
+/**
+ * `.tile-item` is a block with a large thumbnail, a category title, short 
+ * description, optional grade classification and link. There is a news story 
+ * variation and a version for items with no available image.  
+ * It appears as follows:
+ *   +-------------------------+
+ *   |                         |
+ *   |     			           |
+ *   |     __IMAGE             |
+ *   |                         +
+ *   |                         |
+ *   +-------------------------+
+ *   |  __TITLE                |
+ *   |  __description          |
+ *   |  __grades (optional)    |
+ *   |                         |
+ *   |                 -link  |
+ *   +-------------------------+
+ *
+ *   1. This offsets the nested grid
+ *   2. Fixes webkit/chrome rendering issue: flickering of icon element
+ *      during transition of image behind the icon
+ *
+ */
+/* Holder for tile-items */
+.tile-items,
+.news-station {
+	list-style-type:none;
+}
+
+.news-station {
+	margin:0 -12px 12px;
+	@media (min-width: @screen-sm-min) {
+		margin-bottom: 0;
+	}
+}
+
+.tile-items {
+	@media (min-width: @screen-sm-min) {
+		min-height: 355px
+	}
+}
+/* 1. this lets us position the -link at the bottom of the box */
+.tile-item,
+.tile-item-gray,
+.news-station-item {
+	position: relative;	
+	color: @darkestgray;	
+	background: white;
+	border:1px solid @lightgray;
+	.drop-shadow();
+}
+.tile-item,
+.tile-item-gray {
+	@media (min-width: @screen-sm-min) {
+		margin-bottom: 12px;
+	}
+	@media (min-width: @screen-lg-min) {
+		margin-bottom: 24px;
+	}
+	h4 {
+		margin-top: 5px;
+	}
+}
+.tile-daily-news  {
+	color: @brightpink;
+}
+.tile-item,
+.tile-item-gray {
+	padding-left: 90px;
+	@media (min-width: @screen-sm-min) {
+		padding-left: 0;
+		height: 355px;
+	}
+}
+
+.tile-item figure {
+	position: relative;
+	@media (min-width: @screen-sm-min) {
+		height: 200px;
+		overflow: hidden;
+	}	
+	@media (min-width: @screen-md-min) {
+		height: 130px;
+	}
+	@media (min-width: @screen-lg-min) {
+		height: 166px;
+	}
+}
+
+.tile-item-desc {
+	font: 19px @light;
+	margin: 0;
+}
+
+.tile-item .lm-inverse {
+	
+	position: absolute;
+	color: @mediumgray;
+	font-size: 50px;
+	padding: 20px 0;
+	left: -70px;
+	@media (max-width: @screen-xs-max) {
+		margin-left: 0;
+	}
+	@media (min-width: @screen-sm-min) {
+		color: #fff;
+		background-color: rgb(115, 132, 150);
+		background-color: rgba(115, 132, 150, .3);
+		font-size: 38px;
+		bottom: 0;
+		left: 0;
+		margin:0;
+		padding: 2px 2px 6px;
+		line-height: 30px;
+	}
+}
+
+.tile-item-caption {
+	padding: 12px;
+	@media (min-width:@screen-sm-min) {
+		padding: 0 12px;
+	}
+	@media (min-width:@screen-md-min) {
+		padding: 0 20px;
+	}
+	a {
+		color: @darkgray;
+		&:hover {
+			color: @lighterorange;
+		}
+	}
+}
+
+.tile-item__image {
+	display: inline-block;
+	max-height: 100%;
+	+ .lm-inverse {
+		@lm-i-font-size: 20px;
+		@lm-i-box-size: 36px;
+		width: @lm-i-box-size;
+		height: @lm-i-box-size;
+		color: white;
+		
+		background-color: @darkgray;
+		text-decoration: none;
+		font-size: @lm-i-font-size;
+		display: inline-block;
+		line-height: (1 + (@lm-i-box-size - @lm-i-font-size));
+		margin: -@lm-i-box-size 0 0 0;
+		vertical-align: middle;
+		padding: ((@lm-i-box-size - @lm-i-font-size) / 2);
+		
+	}
+}
+
+.tile-item__description {
+	.light;
+	.fs-big;
+	line-height: 1.263;
+	margin-bottom: 0;
+}
+
+.tile-item__grades {
+	.fs-base;
+	line-height: 1.846;
+}
+
+.tile-item-link {
+	width:100%;
+	display: block;
+	padding: 10px;
+	text-align: right;
+	color: @mediumgray;
+	line-height: 16px;
+	text-decoration: none;
+	@media (min-width: @screen-sm-min) {
+		.fs-base;
+		position: absolute;
+		bottom: 0;
+		border-top: 1px solid @lightgray;
+		padding-left: 0;
+	}
+	@media (min-width: @screen-lg-min) {
+		.fs-big;
+	}	
+}
+
+.tile-item-link:hover {
+	color: @mediumgray;
+	text-decoration: underline;
+}
+
+/* 
+   This is the grey block version of the tile items.
+   1. The standard gutter is achieved by using padding in inuit.css, which 
+      gives us an ugly grey box flush with the elements to the left of this 
+      block. setting left paddoing to zero fixes this.
+   2. And then we fake the gutter by making a border that's gutter-wide and the
+      same colour as the background. This should be refactored because it's 
+      nasty.
+*/
+
+.tile-item-gray {
+	background-color: @darkgray;
+	color: white;
+	padding-left: 0;	/* 1 */
+	
+	.lm-inverse {
+		color: #fff;
+		font-size: 70px;
+		position: absolute;
+		padding: 20px 0;
+		opacity: 0.5;
+		filter: alpha(opacity=50);
+		@media (min-width: @screen-sm-min) {
+			font-size: 52px;
+			position: relative;
+			padding-top: 0;
+			padding-left: 0;
+			margin-right: 0;
+			background: none;
+			color: white;
+			margin-left: 12px;
+		}
+	}
+	p {
+		color: #fff;
+	}
+	.tile-item-caption {
+		padding-top: 0;
+		@media (min-width: @screen-sm-min) {
+			width: 100%;
+		}
+	}
+	.tile-item-link {
+		background-color: @darkgray;
+	}
+}
+
+/***
+ * Rules specific to the Station homepage tile items
+ ***/
+
+.news-station-item {
+	background-color: #fff;
+	margin-bottom: 0;
+	@media (max-width: @screen-xs-max) {
+		padding-left: @gutter;
+		padding-bottom: (@gutter/1.5);
+	}
+	@media (min-width: @screen-sm-min) {
+		margin-bottom: 24px;
+	}
+	.news-station-caption {
+		@media (min-width: @screen-sm-min) {
+			padding-left: 20px;
+		}
+	}
+	.news-item-wrapper {
+		background-color: #f7f6f3;
+		overflow: hidden;
+		@media (min-width: @screen-sm-min) {
+			float: left;
+			width:220px;
+			height: 166px;
+		}
+		@media (min-width: @screen-md-min) {
+			width: 224px;
+			height: 175px;
+		}
+		@media (min-width: @screen-lg-min) {
+			width: 296px;
+			height: 222px;
+		}
+		a {
+			display: inline-block;
+			width: 100%; 
+		    height: 100%; 
+		    background-size: contain; 
+		    background-repeat: no-repeat; 
+		    background-position: center center; 
+		}
+	}
+	h3 {
+		font: 400 18px/27px @roboto;
+		margin: 10px 0 5px;
+		color: @darkestgray;
+		a {
+			color: @darkestgray;
+		}
+		a:hover {
+			color: @lighterorange;
+		}
+		a:visited {
+			color: @darkestgray;
+			&:hover {
+				color: @lighterorange;
+			}
+		}
+	}
+	p {
+		margin: 0;
+		line-height: 26px;
+	}
+}
+
+.news-item-more {
+	position: relative;
+	top: 12px;
+	right: 4px;
+	font-size: 16px;
+	color: @darkorange;
+	text-decoration: none;
+	width: 100%;
+	text-align: right;
+	margin-top: -12px;
+	margin-bottom: 12px;
+	@media(min-width: @screen-sm-min) {
+		position: relative;
+		display: block;
+	}
+	@media(min-width: @screen-md-min) {
+		font-size: 20px;
+		margin-bottom: 24px;
+	}
+	a {
+		color: @darkorange;
+		&:hover {
+			color: @lighterorange;
+		}
+	}
+	.lm {
+		margin: 0;
+		margin-left: 4px;
+	}
+}
+
+.news-more-wrapper {
+	@media(min-width: @screen-lg-min) {
+		border-bottom: 1px solid @bordergray;
+	}
+}
+

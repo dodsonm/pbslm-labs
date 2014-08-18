@@ -1,0 +1,27 @@
+
+//should extend lesson-min
+
+.btn-download-doc {
+	background-color: #ff3333;
+	color: #fff;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 12px;
+	margin-top: 20px;
+	&:hover {
+		background-color: @darkgreen;
+		color: #fff;
+	}
+}
+
+.document-copy {
+	padding: 10px;
+	color: @mediumgray;
+	font-size: 16px;
+	@media (min-width: @screen-md-min) {
+		padding: 10px 24px;
+	}
+	p {
+		margin: 0;
+	}
+}

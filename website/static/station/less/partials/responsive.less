@@ -1,0 +1,77 @@
+/*------------------------------------*\
+    $RESPONSIVE
+\*------------------------------------*/
+/**
+ * Global responsive override styles.
+ * 	
+ * 1. These are the maximum widths we allow elements to be at each of the 
+ *    associated responsive sizes - custom defined for this design
+ * 1. Do not show this element on 'lap' devices or higher, i.e. only for phones
+ * 2. Do not show this element at 'desktop' sizes i.e. only for phones and 
+ *    tablets
+ * 3. Only show these elements above palm sizes, i.e. never on a phone
+ * 4. Only show this element on 'desk' and up i.e. never on a phone or tablet
+ * 5. This element calculates its oen height as needed on tablets and phones. 
+ *    Typically used when the height is fixed at desk+ sizes.
+ * 6. An element whose height will change via JS
+ * 7. Responsive rules settingthe element widths to the appropriate max widths
+ *    as defined in (1) above.
+ */
+
+/* 1. */
+@sm-max-width: 736px; 
+@md-max-width: 984px;
+@max-width: 1260px;
+
+/* 2. */
+.no-lap {
+	@media (min-width: @screen-sm-min) {
+		display: none !important;  
+	}
+}
+
+/* 3. */
+.no-desk {
+	@media (min-width: @screen-md-min) {
+		display: none !important;
+	}
+}
+
+/* 4. */
+.lap-and-up {
+	@media (max-width: @screen-xs-max) {
+		display: none !important;
+	}
+}
+
+/* 5. */
+.desk-and-up {
+	@media (max-width: @screen-sm-max) {
+		display: none !important;
+	}
+} 
+
+/* 6. */
+.expandable {
+	@media (max-width: @screen-sm-max) {
+		height: auto !important;
+	}
+}
+
+/* 7. */
+.fill-width {
+	@media (min-width: @screen-sm-min) {
+		width: @sm-max-width;
+		max-width: @sm-max-width;
+	}
+
+	@media (min-width: @screen-md-min) {
+		width: @md-max-width;
+		max-width: @md-max-width;
+	}
+
+	@media (min-width: @screen-lg-min) {
+		width: @max-width;
+		max-width: @max-width;
+	}
+}

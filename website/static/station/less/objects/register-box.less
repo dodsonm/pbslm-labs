@@ -1,0 +1,103 @@
+/*------------------------------------*\
+    $REGISTER-BOX
+\*------------------------------------*/
+/**
+ * `.register-box` is a box found on the national home page when the user is not logged in.
+ */
+
+@register-box__left-padding: 32px;
+
+.register-box {
+	position: relative;
+	background-color: @lighterorange;
+	.regular;
+	color: white;
+	.drop-shadow();
+	text-align: center;
+	padding: 12px;
+	line-height: 1;
+	margin-bottom: @gutter;
+	.first-row-height;
+	@media (min-width: @screen-md-min) {
+		text-align: left;
+		padding: 22px;
+	}
+	@media (min-width: @screen-lg-min) {
+		padding: 30px 24px 0 30px;
+	}
+
+	a {
+		color: white;
+	}
+	h2 {
+		font: 400 20px @roboto-condensed;
+		color: #fff;
+		margin: 0;
+		@media (min-width: @screen-sm-min) {
+			font-size: 26px
+		}
+		@media (min-width: @screen-lg-min) {
+			font-size: 32px;
+		}
+	}
+	h3 {
+		position: relative;
+		margin: 6px 0;
+		font-size: 18px;
+		color: #fff;
+		@media (min-width: @screen-md-min) {
+			margin-top: 20px;
+		}
+		@media (min-width: @screen-lg-min) {
+			margin-top: 36px;
+		}
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+.register-free {
+	color: #834e00;
+	font-size: 18px;
+	text-transform: none;
+	display:none;
+	@media (min-width: @screen-sm-min) {
+		display: block;
+		padding-top: 5px;
+	}
+	@media (min-width: @screen-md-min) {
+		display: inline-block;
+		padding-left: 44px;
+	}
+}
+
+.register-why {
+	font-size: 16px;
+	line-height: 20px;
+	width: 100%;
+	margin-top: 4px;
+	@media (min-width: @screen-sm-min) {
+		position: absolute;
+		font-size: 14px;
+		right: 0;
+		bottom: 4px;
+		width: 225px;
+	}
+	@media (min-width: @screen-md-min) {
+		position: static;
+	}
+	@media (min-width: @screen-lg-min) {
+		position: relative;
+		display: inline-block;
+	}
+	a {
+		border-bottom: 1px solid transparent;
+		&:hover {
+			border-bottom: 1px solid white;
+		}
+	}
+}
+
+
+

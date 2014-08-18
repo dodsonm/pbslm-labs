@@ -1,0 +1,203 @@
+/*------------------------------------*\
+    $CAROUSEL
+\*------------------------------------*/
+/**
+ * `.carousel` is found on the home page and comprises several list items that rotate.
+ * The homepage style appears as follows:
+ *   +-------------------------+---------------+
+ *   |                         | __title       |
+ *   |     			           | __description |
+ *   |     __BIG-IMAGE         |               |
+ *   |                         +---------------+
+ *   |                         |<     ooo     >|
+ *   +-------------------------+---------------+
+ */
+
+@number-of-slides: 3;
+
+.owl-slider {
+	background-color: #fff;
+	margin-bottom: @gutter;
+	border: 1px solid @bordergray;
+	.drop-shadow();
+	h2 {
+		margin: 5px 0;
+	}
+}
+
+.owl-row {
+	margin: 0 !important;
+	p {
+		margin: 0;
+	}
+}
+
+.owl-img {
+	padding: 0 !important;	
+	img {
+		border: 0;
+	}	
+}
+
+.national .owl-img {
+	.first-row-height;
+
+	a::after {
+		content: "\0051";
+		height: 24px;
+		width: 24px;
+		font-family: 'lmbase2';
+		font-size: 48px;
+		position: absolute;
+		color: #FFF;
+		bottom: 43px;
+		left: 20px;
+		@media (min-width: @screen-sm-min) {
+			content: "\004F";
+			font-size: 60px;
+			top: -20px;
+			right: 20px;
+			bottom: inherit;
+			left: inherit;
+		}
+	}
+}
+
+.station .owl-img {
+
+	a::after {
+		content: "\0051";
+		height: 24px;
+		width: 24px;
+		font-family: 'lmbase2';
+		font-size: 48px;
+		position: absolute;
+		color: #FFF;
+		bottom: 43px;
+		left: 20px;
+		@media (min-width: @screen-md-min) {
+			content: "\004F";
+			font-size: 60px;
+			top: -20px;
+			right: 20px;
+			bottom: inherit;
+			left: inherit;
+		}
+
+		@media (min-width: @screen-lg-min) {
+			content: "\0051";
+			font-size: 48px;
+			top: inherit;
+			right: inherit;
+			bottom: 43px;
+			left: 20px;
+		}
+	}
+}
+.no-news .owl-img {
+	a::after {
+		@media (min-width: @screen-md-min) {
+			content: "\004F";
+			font-size: 60px;
+			top: -20px;
+			right: 20px;
+			bottom: inherit;
+			left: inherit;
+		}
+	}
+}
+.national .owl-controls {
+	
+	position: relative;
+	margin: 0 auto;
+	padding-bottom: 12px;
+
+	@media (min-width: @screen-sm-min) {
+		position: absolute;
+		width: 225px;
+		right: 12px;
+		bottom: 0;
+		padding-bottom: 0;
+	}
+	@media (min-width: @screen-md-min) {
+		bottom: 10px;
+	}
+	@media (min-width: @screen-lg-min) {
+		width: 275px;
+	}
+}
+
+.station .owl-controls {
+	position: relative;
+	margin: 0 auto;
+	padding-bottom: 12px;
+
+	@media (min-width: @screen-md-min) and (max-width: (@screen-lg-min - 1px) ) {
+		position: absolute;
+		width: 470px;
+		right: 0;
+		bottom: 12px;
+	}
+
+	@media (min-width: @screen-lg-min) {
+		position: relative;
+		margin: 0 auto;
+
+	}
+}
+
+.no-news .owl-controls {
+	position: relative;
+	margin: 0 auto;
+	padding-bottom: 12px;
+	@media(min-width: @screen-md-min) {
+		position: absolute;
+		right: 0;
+		bottom: 4px;
+		width: 50%;
+	}
+}
+.owl-title {
+	font: 400 21px/30px @roboto;
+	color: @darkestgray;
+	&:hover {
+		color: @lighterorange;
+	}
+}
+
+.no-js .owl-carousel {
+	display: block;
+}
+.owl-buttons {
+	position: absolute;
+	div {
+		background-color: transparent;
+		color: @lightgray;
+		font-family: 'lmbase2';
+		font-size: 34px;
+	}
+}
+
+.owl-controls .owl-page span {
+	background: @lightgray;
+}
+
+.owl-buttons {
+
+	width: 100%;
+	top: -25px;  //difference between the nav circle and its container plus fs
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+
+.owl-prev {
+
+	position: absolute;
+	left: 0;
+
+}
+
+.owl-next {
+	position: absolute;
+	right: 0;
+}

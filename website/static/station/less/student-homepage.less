@@ -1,0 +1,237 @@
+.student-header {
+
+    .home-logo {
+        position: relative;
+
+        .logo-text {
+            position: absolute;
+            font-family: @flower;
+            color: darkgreen;
+            font-size: 20px;
+            top: 40px;
+            left: 46px;
+
+            @media (min-width: @screen-md-min) {
+                top: 60px;
+                left: 60px;
+            }
+        }
+    }
+
+    .student-nav-item {
+        background-color: @darkgreen;
+        color: white;
+        margin-left: 10px;
+
+        a {
+            color: white;
+        }
+    }
+}
+
+.student-home {
+    text-align: center;
+    margin: 40px 0px 40px 0px;
+
+    .header-menu {
+        background-color: white;
+        border: 1px solid @lightgray;
+        .drop-shadow();
+
+        .arrow-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: @bold;
+            height: 74px;
+        }
+
+        .menu-item {
+            height: 74px;
+            color: @darkgreen;
+            cursor: pointer;
+
+            .lm {
+                color: @darkgreen;
+                font-size: 24px;
+            }
+
+            .category {
+                font-family: @bold;
+                display: block;
+                color: black;
+                line-height: 14px;
+            }
+
+            &:hover {
+                color: white;
+                background-color: @darkgreen;
+
+                .lm, .category {
+                    color: white;
+                }
+            }
+        }
+
+        .discover-container {
+            background-color: lightgray;
+
+            .discover-more {
+                font-family: @flower;
+                color: darkgreen;
+                font-size: 20px;
+                padding-left: 10px;
+            }
+        }
+
+    }
+
+    .student-search-input-container {
+        position: relative;
+        text-align: left;
+        height: 46px;
+
+        input {
+            width: 98%; //this style is for inner page search input
+            font: @bigger-type-size @regular;
+            background: transparent;
+            text-align: left;
+            border: 0;
+            -webkit-appearance:none;
+            height: inherit;
+            padding: 12px 12px 12px 30px;
+
+            &:focus {
+                outline: 0;
+            }
+            @media (min-width: @screen-sm-min) {
+                font-size: 25px;
+                padding-top: 10px;
+            }
+        }
+        i {
+            position: absolute;
+            font-size: 25px;
+            top: 0;
+            margin:0;
+        }
+    }
+}
+
+
+.student-home-content {
+
+    .owl-slider {
+        .resource-item {
+            height: 412px;
+            padding: 0px;
+
+            .owl-img-container {
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .owl-title {
+                color: white;
+            }
+        }
+
+
+        .owl-img {
+            img {
+                height: 412px;
+            }
+        }
+
+        .student-well-item {
+
+            .well-inner {
+
+                height: 200px;
+                margin-bottom: @grid-gutter-width/2;
+
+                .title {
+                    padding: 3px 10px;
+                    font-family: @black;
+                    font-size: 20px;
+                }
+            }
+
+        }
+    }
+}
+
+.footer-container {
+    background-color: white;
+}
+
+/*
+ * Flipping logic
+ */
+.flip-container {
+    perspective: 1000;
+}
+
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+    width: 100%;
+    height: 100%;
+}
+
+/* flip speed goes here */
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    height: 100%;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+    z-index: 2;
+}
+
+/* back, initially hidden pane */
+.back {
+    transform: rotateY(-180deg);
+    color: white;
+    padding: 10px;
+}
+// end flipping
+
+.pink {
+    background-color: #ef9eb1;
+    color: white;
+
+}
+
+.light-brown {
+    background-color: #f5eccf;
+}
+
+.teal {
+    background-color: #9be3e0;
+}
+
+.brown {
+    background-color: #6d493d;
+    color: white;
+}
+
+.gray {
+    background-color: gray;
+    color: white;
+}

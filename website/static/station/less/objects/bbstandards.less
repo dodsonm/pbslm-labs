@@ -1,0 +1,82 @@
+.bbs-select-type {
+	select {
+		padding: 4px;
+		max-width: 80%;
+		outline: 0;
+		border: 1px solid @bordergray;
+	}
+	h4 {
+		text-transform: none;
+	}
+}
+.bbs-select-grade {
+	label {
+		padding: 4px;
+	}
+	@media(min-width: @screen-sm-min) {
+		border-left: 1px solid @bordergray;
+		border-right: 1px solid @bordergray;
+	}
+}
+.bbs-steps {
+	position: relative;
+	padding-left: 60px;
+	span {
+		position: absolute;
+		left: 0;
+	}
+}
+.bbs-keywords {
+	input {
+		margin-top: 4px;
+		padding: 4px;
+		border: 1px solid @bordergray;
+		border-radius: 2px;
+		outline: 0;
+		width:100%;
+	}
+}
+.bbs-browse {
+	.btn-browse {
+		color: #fff;
+		padding:10px 12px;
+		background-color: @lighterorange;
+		outline: 0;
+		&:hover {
+			background-color: @darkorange;
+		}
+	}
+}
+.bbs-results {
+
+	// Classes names below are from old PBS design and were kept to avoid changing
+	// AJAX response - the .chevron classes should be renamed to .lm classes
+	// and other class names should be shortened
+	
+	.browse-by-standards-selection-title {
+		font-size: 16px;
+		font-weight: 500;
+		color: @mediumgray;
+	}
+	.chevron-icon {
+		font-size: 20px;
+		line-height: 22px;
+		margin: 0 4px 0 0;
+		color: @mediumgray;
+	}
+	.icon-chevron-down {
+		font-size: 16px;
+	}
+	.children {
+		padding-left: 20px;
+	}
+	.border-top {
+		border-top: 1px solid @bordergray;
+	}
+	.pagination {
+		margin-top: 12px;
+	}
+	.paginator {
+		margin:10px;
+	}
+}

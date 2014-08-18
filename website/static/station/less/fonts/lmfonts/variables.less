@@ -1,0 +1,203 @@
+// Variables
+// --------------------------
+//  1. relative from /css/ folder
+//  2. for lmbase font
+//  3. for lm hand font
+//  4. for pbs social font
+
+
+
+@lm-font-path:        "../fonts/lmfonts"; /* 1. */
+@lm-css-prefix:       lm;		/* 2. */
+@lmh-css-prefix:      lmh;		/* 3. */
+@ps-css-prefix:		  ps;		/* 4. */
+@lm-version:          "1.0.2";
+@lm-border-color:     #eee;
+@lm-inverse:          #fff;
+@lm-li-width:         (30em / 14);
+
+
+/**
+ * LM Font
+ */
+
+@lm-var-info:			"\0031";	/* 1 */
+@lm-var-play-gallery:	"\0032";	/* 2 */
+@lm-var-fav-folder: 	"\0033";	/* 3 */
+@lm-var-no-pencil:		"\0034";
+@lm-var-eye: 			"\0035";
+@lm-var-page: 			"\0036";
+@lm-var-all-arrow: 		"\0037";
+@lm-var-heart-outline: 	"\0038";
+@lm-var-star-outline: 	"\0039";
+
+@lm-var-plus-o:			"\0041";	/* A */
+@lm-var-minus-o:		"\0042";	/* B */
+@lm-var-cross-o:		"\0043";	/* C */
+@lm-var-cross:			"\0044";	/* D */
+@lm-var-trash:			"\0045";	/* E */
+@lm-var-right-o:		"\0046";	/* F */
+@lm-var-left-o:			"\0047";	/* G */
+@lm-var-down-o:			"\0048";	/* H */
+@lm-var-up-o:			"\0049";	/* I */
+@lm-var-right-arrow:	"\004A";	/* J */
+@lm-var-left-arrow:		"\004B";	/* K */
+@lm-var-down-arrow:		"\004C";	/* L */
+@lm-var-up-arrow:		"\004D";	/* M */
+@lm-var-triangle-right:	"\004E";	/* N */
+@lm-var-triangle-left:	"\004F";	/* O */
+@lm-var-triangle-down:	"\0050";	/* P */
+@lm-var-triangle-up:	"\0051";	/* Q */
+@lm-var-screen:			"\0052";	/* R */
+@lm-var-menu:			"\0053";	/* S */
+@lm-var-doc-sm:			"\0054";	/* T */
+@lm-var-heart:			"\0055";	/* U */
+@lm-var-edit:			"\0056";	/* V */
+@lm-var-download:		"\0057";	/* W */
+@lm-var-dash-add:		"\0058";	/* X */
+@lm-var-dash-delete:	"\0059";	/* Y */
+@lm-var-dashboard:		"\005A";	/* Z */
+
+@lm-var-envelope: 		"\0061";	/* a */
+@lm-var-question-o: 	"\0062";	/* b */
+@lm-var-happyface: 		"\0063";	/* c */
+@lm-var-star-o:			"\0064";	/* d */
+@lm-var-star:	 		"\0065";	/* e */
+@lm-var-search:	 		"\0066";	/* f */
+@lm-var-play-o:	 		"\0067";	/* g */
+@lm-var-screen-pointer:	"\0068";	/* h */
+@lm-var-pictures:	 	"\0069";	/* i */
+@lm-var-ear-wave:	 	"\006A";	/* j */
+@lm-var-picture:		"\006B";	/* k */
+@lm-var-documents:		"\006C";	/* l */
+@lm-var-screen-text:	"\006D";	/* m */
+@lm-var-add:	 		"\006E";	/* n */
+@lm-var-document:	 	"\006F";	/* o */
+@lm-var-folder:	 		"\0070";	/* p */
+@lm-var-gears:	 		"\0071";	/* q */
+@lm-var-film-clip:		"\0072";	/* r */
+@lm-var-people:			"\0073";	/* s */
+@lm-var-teacher: 		"\0074";	/* t */
+@lm-var-hands-up:		"\0075";	/* u */
+@lm-var-beta:			"\0076";	/* v */
+@lm-var-printer:		"\0077";	/* w */
+@lm-var-link:			"\0078";	/* x */
+@lm-var-share:			"\0079";	/* y */
+@lm-var-pencil:			"\007A";	/* z */
+
+/**
+ * LM Hand Font
+ */
+
+@lmh-var-smartphone:	"\0021";	/* ! */
+@lmh-var-monitor:		"\0023";	/* # */
+@lmh-var-play-film:		"\0024";	/* $ */
+@lmh-var-coffeecup:		"\0025";	/* % */
+@lmh-var-cutlery:		"\0026";	/* & */
+
+@lmh-var-apple:			"\0028";	/* ( */
+@lmh-var-radio:			"\0029";	/* ) */
+@lmh-var-fork-knife:	"\002A";	/* * */
+@lmh-var-newspapers:	"\002D";	/* - */
+
+@lmh-var-at-symbol:		"\0030";	/* 0 */
+@lmh-var-one:			"\0031";	/* 1 */
+@lmh-var-two:			"\0032";	/* 2 */
+@lmh-var-three:			"\0033";	/* 3 */
+@lmh-var-four:			"\0034";	/* 4 */
+@lmh-var-five:			"\0035";	/* 5 */
+@lmh-var-question:		"\0036";	/* 6 */
+@lmh-var-megaphone:		"\0037";	/* 7 */
+@lmh-var-headset:		"\0038";	/* 8 */
+@lmh-var-headphones:	"\0039";	/* 9 */
+
+@lmh-var-laptop:		"\0040";	/* @ */
+@lmh-var-star-o:		"\0041";	/* A */
+@lmh-var-happyface:		"\0042";	/* B */
+@lmh-var-thumbup:		"\0043";	/* C */
+@lmh-var-idea:			"\0044";	/* D */
+@lmh-var-sun:			"\0045";	/* E */
+@lmh-var-chat:			"\0046";	/* F */
+@lmh-var-speechbubble:	"\0047";	/* G */
+@lmh-var-flag:			"\0048";	/* H */
+@lmh-var-check:			"\0049";	/* I */
+@lmh-var-alert:			"\004A";	/* J */
+@lmh-var-rightarrow:	"\004B";	/* K */
+@lmh-var-rightarrow-rev:"\004C";	/* L */
+@lmh-var-books:			"\004D";	/* M */
+@lmh-var-newspaper:		"\004E";	/* N */
+@lmh-var-certificate:	"\004F";	/* O */
+@lmh-var-rosette:		"\0050";	/* P */
+@lmh-var-medal:			"\0051";	/* Q */
+@lmh-var-diploma:		"\0052";	/* R */
+@lmh-var-graduationcap:	"\0053";	/* S */
+@lmh-var-pen:			"\0054";	/* T */
+@lmh-var-pencil:		"\0055";	/* U */
+@lmh-var-thumbtack:		"\0056";	/* V */
+@lmh-var-paperclip:		"\0057";	/* W */
+@lmh-var-envelope:		"\0058";	/* X */
+@lmh-var-glasses:		"\0059";	/* Y */
+@lmh-var-clipboard:		"\005A";	/* Z */
+
+@lmh-var-coffee:		"\005E";	/* ^ */
+@lmh-var-talking:		"\005F";	/* _ */
+
+@lmh-var-right-o-rev:	"\0060";	/* grave accent */
+
+@lmh-var-brush: 		"\0061";	/* a */
+@lmh-var-music: 		"\0062";	/* b */
+@lmh-var-somedude: 		"\0063";	/* c */
+@lmh-var-scroll:		"\0064";	/* d */
+@lmh-var-vote:	 		"\0065";	/* e */
+@lmh-var-congress:	 	"\0066";	/* f */
+@lmh-var-world:	 		"\0067";	/* g */
+@lmh-var-earth:			"\0068";	/* h */
+@lmh-var-map-pin:	 	"\0069";	/* i */
+@lmh-var-saturn:	 	"\006A";	/* j */
+@lmh-var-spaceshuttle:	"\006B";	/* k */
+@lmh-var-trees:			"\006C";	/* l */
+@lmh-var-plant:			"\006D";	/* m */
+@lmh-var-recycle:	 	"\006E";	/* n */
+@lmh-var-chemicals:	 	"\006F";	/* o */
+@lmh-var-microscope:	"\0070";	/* p */
+@lmh-var-calculator:	"\0071";	/* q */
+@lmh-var-protractor:	"\0072";	/* r */
+@lmh-var-graph:			"\0073";	/* s */
+@lmh-var-snowman: 		"\0074";	/* t */
+@lmh-var-snowflake:		"\0075";	/* u */
+@lmh-var-mittens:		"\0076";	/* v */
+@lmh-var-cog:			"\0077";	/* w */
+@lmh-var-pumpkin:		"\0078";	/* x */
+@lmh-var-heart:			"\0079";	/* y */
+@lmh-var-star:			"\007A";	/* z */
+
+@lmh-var-touchscreen:	"\007E";	/* ~ */
+
+/**
+ * PBS Social Media Icons Font
+ */
+
+@ps-var-facebook-rnd: 	"\0061";	/* a */
+@ps-var-facebook-rev: 	"\0062";	/* b */
+@ps-var-facebook: 		"\0063";	/* c */
+@ps-var-twitter-rnd:	"\0064";	/* d */
+@ps-var-twitter-rev:	"\0065";	/* e */
+@ps-var-twitter:	 	"\0066";	/* f */
+@ps-var-linkedin-rnd:	"\0067";	/* g */
+@ps-var-linkedin-rev:	"\0068";	/* h */
+@ps-var-linkedin-blk:	"\0069";	/* i */
+@ps-var-face-rnd:	 	"\006A";	/* j */
+@ps-var-face-rev:		"\006B";	/* k */
+@ps-var-face:			"\006C";	/* l */
+@ps-var-googleplus-rnd:	"\006D";	/* m */
+@ps-var-googleplus-rev:	"\006E";	/* n */
+@ps-var-googleplus:	 	"\006F";	/* o */
+@ps-var-pinterest-rnd:	"\0070";	/* p */
+@ps-var-pinterest-rev:	"\0071";	/* q */
+@ps-var-pinterest:		"\0072";	/* r */
+@ps-var-apple:			"\0073";	/* s */
+@ps-var-dvd:	 		"\0074";	/* t */
+@ps-var-cc:				"\0075";	/* u */
+@ps-var-pbs-rev:		"\0076";	/* v */
+@ps-var-pbs:			"\0077";	/* w */
+@ps-var-pbs-block:		"\0078";	/* x */

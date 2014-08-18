@@ -1,0 +1,139 @@
+.modal {
+  overflow-y: auto;
+}
+@media (min-width: 768px) {
+  #cc-settings {
+    width: 700px;
+    margin: 10% auto;
+  }
+}
+#cc-settings h3 {
+  font-size: 20px;
+}
+#cc-settings h4 {
+  font-size: 16px;
+}
+#cc-settings .cc-preview-container {
+  background: url(../../images/preview_background.jpg) no-repeat 0 0;
+  padding: 15px;
+  border: 1px solid #3f3f3f;
+  font-size: 15px;
+  line-height: 1;
+  font-family: Arial;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+}
+#cc-settings .cc-preview-container .cc-preview-text,
+#cc-settings .cc-preview-container .cc-preview-text {
+  display: inline-block;
+}
+#cc-settings .cc-preview-container .cc-preview-text {
+  background: #000;
+  padding: 5px 10px;
+}
+#cc-settings .cc-preview-container .cc-preview-window {
+  border: 5px solid #000;
+  border-radius: 5px;
+}
+#cc-settings .cc-preview-container #cc-preview.none {
+  display: block !important;
+}
+#cc-settings .cc-preview-container #cc-preview.dropshadow {
+  text-shadow: rgba(0, 0, 0, 0.8) 0px 2px 1px;
+}
+#cc-settings .cc-preview-container #cc-preview.raised {
+  text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 5px, rgba(0, 0, 0, 0.8) 0px 1px 5px, rgba(0, 0, 0, 0.8) 0px 2px 5px;
+}
+#cc-settings .cc-preview-container #cc-preview.depressed {
+  text-shadow: rgba(0, 0, 0, 0.8) 0px -2px 1px;
+}
+#cc-settings .cc-preview-container #cc-preview.uniform {
+  text-shadow: rgba(0, 0, 0, 0.8) -2px 0px 1px, rgba(0, 0, 0, 0.8) 2px 0px 1px, rgba(0, 0, 0, 0.8) 0px -2px 1px, rgba(0, 0, 0, 0.8) 0px 2px 1px, rgba(0, 0, 0, 0.8) -1px 1px 1px, rgba(0, 0, 0, 0.8) 1px 1px 1px, rgba(0, 0, 0, 0.8) 1px -1px 1px, rgba(0, 0, 0, 0.8) 1px 1px 1px;
+}
+#cc-settings .cc-config-container .option {
+  height: 22px;
+  line-height: 22px;
+  margin-bottom: 0;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  #cc-settings .cc-config-container .option {
+    width: auto;
+  }
+}
+#cc-settings .cc-config-container .option input {
+  height: 22px;
+  max-width: 80%;
+}
+#cc-settings .cc-config-container .option input[type=range] {
+  padding: 0;
+}
+#cc-settings .cc-config-container .option .cc-input-text {
+  width: 15%;
+  display: inline-block;
+  text-align: right;
+}
+@media (max-width: 767px) {
+  #cc-settings .cc-config-container .option .cc-input-text {
+    text-align: left;
+  }
+}
+#cc-settings .cc-config-container .colors {
+  margin: 0 auto;
+  width: 184px;
+}
+@media (max-width: 767px) {
+  #cc-settings .cc-config-container .colors {
+    margin: 0;
+  }
+}
+#cc-settings .cc-config-container .colors li {
+  float: left;
+  cursor: pointer;
+}
+#cc-settings .cc-config-container .colors li span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  margin-right: 1px;
+}
+#cc-settings .cc-config-container .colors li span.black {
+  background-color: #000000;
+}
+#cc-settings .cc-config-container .colors li span.white {
+  background-color: #FFFFFF;
+}
+#cc-settings .cc-config-container .colors li span.red {
+  background-color: #FF0000;
+}
+#cc-settings .cc-config-container .colors li span.green {
+  background-color: #00FF00;
+}
+#cc-settings .cc-config-container .colors li span.blue {
+  background-color: #0000FF;
+}
+#cc-settings .cc-config-container .colors li span.yellow {
+  background-color: #FFFF00;
+}
+#cc-settings .cc-config-container .colors li span.magenta {
+  background-color: #FF00FF;
+}
+#cc-settings .cc-config-container .colors li span.bleumarine {
+  background-color: #00FFFF;
+}
+#cc-settings .cc-config-container .colors li.active span {
+  box-shadow: inset 0 0 5px 2px hotpink;
+  border-color: hotpink;
+}
+#cc-settings .cc-save {
+  color: #fff;
+}
+#cc-settings .cc-reset {
+  color: #333;
+}
+.no-webworkers #cc-settings .cc-config-container .option .cc-input-text {
+  display: none;
+}

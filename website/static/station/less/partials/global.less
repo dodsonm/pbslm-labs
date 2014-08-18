@@ -1,0 +1,181 @@
+/*------------------------------------*\
+    $GLOBAL STYLES
+\*------------------------------------*/
+
+body {
+	background-color: @lightestgray;
+}
+
+.container, .container-fluid {
+	padding: 0;	//override bootstrap padding usage
+}
+
+.row, .std-mgneg {
+	margin-left: 0;	//override bootstrap margin usage
+	margin-right: 0;
+	@media (min-width: @screen-sm-min) {
+		margin-left: -@gutter/2;
+		margin-right: -@gutter/2;
+	}
+}
+/* generic padding and margin classes to be moved to global module */
+.bg-lg {
+	background-color: @lightestgray;
+}
+.mg-none {
+	margin: 0;
+}
+.pd-none {
+	padding: 0;
+}
+.stdpd-tb {
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.pad-left {
+	padding-left: @gutter;
+}
+//Implement reusable styling classes here
+.std-pdlr {
+	padding-left: @gutter/2;
+	padding-right: @gutter/2;
+}
+.std-mgb {
+	margin-bottom: 24px;	//use a default bottom margin
+}
+.std-mgt {
+	margin-top: 24px;
+}
+.std-wb {
+	background-color: #fff;
+}
+.std-linebg {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAJ0lEQVQIW2NkwA6MGbGIGwPFzqJLgAVBipEl4ILIEiiCMAkMQZAEAEbIBTpQMFGXAAAAAElFTkSuQmCC
+	) repeat;
+}
+.std-border {
+	border:1px solid @bordergray;
+}
+.std-border-top {
+	border-top: 1px solid @bordergray;
+}
+.std-border-bot {
+	border-bottom: 1px solid @bordergray;
+}
+.std-section {
+	padding: 12px 24px;
+}
+.std-show-hide {
+	.lm {
+		margin: 0;
+	}
+	.lm-dash-add {
+		display: inline;
+	}
+	.lm-dash-delete {
+		display: none;
+	}
+	.js-open& {		//hide plus /minus icon depending on page type, toggle class to show hide
+		.lm-dash-add {
+			display: none;
+		}
+		.lm-dash-delete {
+			display: inline;
+		}
+	}
+}
+.std-collapse-title {
+	color: @darkestgray;
+	&:hover {
+		color: @darkestgray;
+	}
+	.lm {
+		margin-right: 6px;
+		color: @darkorange;
+	}
+}
+.bg-default {
+	background-color: #fff;
+}
+.pad-none-xs {
+	padding: 0;
+	@media(min-width: @screen-sm-min) {
+		padding: @gutter/2;
+	}
+}
+.pad-all-xs {
+	padding: @gutter/2;
+	@media(min-width: @screen-sm-min) {
+		padding: 0;
+	}
+}
+.pd-none {
+	padding: 0;
+}
+.clear-left {
+	clear: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+.flower-text {
+	font-size: 20px;
+	color: @brightpink;
+}
+ul,
+li {
+	padding:0;
+	margin:0;
+}
+.no-list-style {
+	list-style:none;
+}
+.inside-list-style {
+	list-style-position: inside;
+}
+.errorlist {	// this class is required to style the errors on the feedback form
+	.no-list-style;
+	color: @brightpink;	
+}
+a {
+	outline: 0;
+	text-decoration: none;
+	color: @darkorange;
+	&:hover,
+	&:visited,
+	&:active {
+		outline: 0;
+		text-decoration: none;
+	}
+	&:hover {
+		color: @lighterorange;
+	}
+}
+
+.no-js {
+	.toggle {
+		display: none;
+	}
+}
+
+.standard-fade {
+	.transition(0.3s, ease-in-out);
+}
+
+.standardBoxShadow {
+    .drop-shadow(0, 1px, 2px, 0.3);
+    border: 1px solid @bordergray;
+	
+}
+
+.icon-wrap {
+	display: block;
+	position: relative;
+}
+
+.admin-lm-icon{
+  font-size: 18px;
+}

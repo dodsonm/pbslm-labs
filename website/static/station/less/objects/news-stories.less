@@ -1,0 +1,74 @@
+/*------------------------------------*\
+    $NEWS-STORIES
+\*------------------------------------*/
+/**
+ * `.news-stories` is a set of four stories on the home page, each with an icon to the left.
+ * It appears as follows:
+ *   +--------+---------------+
+ *   |        | __description |
+ *   | (icon) |               |
+ *   |        | __link        |
+ *   +--------+---------------+
+ */
+
+@news-story-font-size: 14px;
+@news-story-line-height: 20px;
+
+.news-stories {
+	margin: 12px auto;
+	line-height: @news-story-line-height;
+	li {
+		padding-left: 70px;
+		margin-bottom: 24px;
+		min-height: 60px;
+	}
+	p {
+		margin: 0;
+	}
+	h4 {
+		padding-bottom: 5px;
+		margin-bottom: 10px;
+		border-bottom: 1px solid @bordergray;
+	}
+}
+
+.news-title {
+	font: 500 18px/23px @roboto-condensed;
+	margin-bottom: 5px;
+	color: @body-text;
+	text-decoration: none;
+	a {
+		color: @body-text;
+		&:hover {
+			color: @lighterorange;
+			text-decoration: underline;
+		}
+		&:visited, &:active {
+			color: @body-text;
+			&:hover {
+				color: @lighterorange;
+			}
+		}
+	}
+}
+
+.news-link {
+	color: @darkorange;
+	&:hover {
+		color: @darkorange;
+		text-decoration: underline;
+	}
+}
+
+.news-icon {
+	color: @darkgray;
+	font-size: 56px;
+	position: absolute;
+	left: -12px;
+	top: 24px;
+}
+
+.news-icon-large {
+    color: @darkgray;
+	font-size: 108px;
+}

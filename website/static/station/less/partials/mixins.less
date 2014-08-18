@@ -1,0 +1,143 @@
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+    -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+    -moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+    box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+
+.transition(@duration:0.2s, @ease:ease-out) {
+    -webkit-transition: all @duration @ease;
+       -moz-transition: all @duration @ease;
+         -o-transition: all @duration @ease;
+            transition: all @duration @ease;
+}
+
+.filter(@filterstring) {
+	   -moz-filter: @filterstring;
+	-webkit-filter: @filterstring;
+	     -o-filter: @filterstring;
+			filter: @filterstring;
+}
+
+.full-page {
+    // make an element the width of the screen and centre align its contents
+    width: 100%;
+	text-align: center;
+}
+
+.hover-knockback {
+	opacity: 0.75;
+}
+
+
+/**
+ * The following are specific to a couple of objects derived
+ * from Inuit. 
+ */
+
+
+
+/**
+ * Create vendor-prefixed CSS in one go, e.g.
+ *
+   `.box-sizing(border-box);`
+ *
+ */
+.box-sizing(@value){
+    -webkit-box-sizing:@value;
+       -moz-box-sizing:@value;
+        -ms-box-sizing:@value;
+         -o-box-sizing:@value;
+            box-sizing:@value;
+}
+.order(@value){
+    -webkit-order:@value;
+       -moz-order:@value;
+        -ms-order:@value;
+         -o-order:@value;
+            order:@value;
+}
+.flex-direction(@value){
+    -webkit-flex-direction:@value;
+       -moz-flex-direction:@value;
+        -ms-flex-direction:@value;
+         -o-flex-direction:@value;
+            flex-direction:@value;
+}
+.column-gap(@value){
+    -webkit-column-gap:@value;
+       -moz-column-gap:@value;
+        -ms-column-gap:@value;
+         -o-column-gap:@value;
+            column-gap:@value;
+}
+.column-count(@value){
+    -webkit-column-count:@value;
+       -moz-column-count:@value;
+        -ms-column-count:@value;
+         -o-column-count:@value;
+            column-count:@value;
+}
+
+
+/**
+ * Force overly long spans of text to truncate, e.g.:
+ *
+   `@include truncate(100%);`
+ *
+ * Where `@truncation-boundary` is a united measurement.
+ */
+.truncate(@truncation-boundary){
+    max-width:@truncation-boundary;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+
+.block-lists() {
+    &,
+    > li{
+        border:0 solid #ccc; /* Override this color in your theme stylesheet */
+    }
+
+    list-style:none;
+    margin-left:0;
+    border-top-width:1px;
+
+    > li{
+        border-bottom-width:1px;
+        padding:12px;
+    }
+}
+
+.block-list-links() {
+    display:block;
+    padding:12px;
+    margin:-12px;
+}
+
+/**
+ * Create global or selective box sizing rules based on the value passed
+ *
+ */
+.do-global-border-box(@conditional) when (@conditional = true) {
+    /**
+     * Let’s make the box model all nice, shall we...?
+     */
+    *,
+    *:before,
+    *:after{
+       .box-sizing(border-box);
+    }
+}
+.do-global-border-box(@conditional) when (@conditional = false) {
+}
+.do-selective-border-box(@conditional) when (@conditional = false) {
+   .box-sizing(border-box);
+}
+.do-selective-border-box(@conditional) when (@conditional = true) {
+}

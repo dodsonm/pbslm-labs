@@ -1,0 +1,44 @@
+
+.single-container {
+    text-align: left;
+    padding: 24px 12px;
+}
+.single-content {
+    padding: 12px 6px 6px 24px;
+    background-color: #fff;
+    h2,h3, .lesson-min {
+        margin-left: -12px;
+    }
+    h3 {
+        color: @darkgray;
+        font-size: 21px;
+    }
+    ul {
+        margin-left: 24px;
+    }
+}
+.lesson-show {
+    display: none;
+}
+.lesson-open-text, .lesson-closed-text, .lesson-min {
+    text-transform: uppercase;
+}
+.lesson-open-text {
+    .js-open & {
+        display: none;
+    }
+}
+.lesson-closed-text {
+    display: none;
+    .js-open & {
+        display: inline;
+    }
+}
+.lesson-min {
+    display: inline-block;
+    padding: 12px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font: 18px @conreg;
+    background-color: @lightestgray;
+}

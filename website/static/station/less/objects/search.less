@@ -1,0 +1,145 @@
+.search-summary {
+	font-size: 14px;
+	padding: 12px;
+	font-weight: 500;
+	label {
+		font-size: 14px;
+	}
+	select {
+		-webkit-apperance: none;
+		-moz-appearance: none;
+		appearance: none;
+		border: 1px solid @bordergray;
+		border-radius: 2px;
+		font-size: 13px;
+	}
+}
+.search-img-toggle {
+	margin-bottom: 6px;
+	label {
+		font-size: 13px;	
+	}
+}
+.search-results-container {
+	.hide-images& {
+		figure {
+			display: none;
+		}
+	}
+}
+.search-item {
+	.make-xs-column(16);
+	.make-sm-column(16/2);
+	.make-md-column(16/3);
+	.pad-none-xs;
+	h4 {
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+	img {
+		display: block;
+		margin: 0 auto;
+		max-height: 100%;
+	}
+	figure {
+		background-color: #000;
+		height: 180px;
+		overflow: hidden;
+		@media(min-width:@screen-md-min) {
+			height: 165px;
+		}
+	}
+}
+.search-item-caption, .search-item-info, .search-item-grades, .search-item-provider {
+	padding:12px;
+	font: 400 12px/18px @roboto;
+}
+.search-item-caption .distribution {
+    background:#969494;
+    padding: 7px;
+}
+.search-item-info {
+	font-size: 13px;
+	@media(min-width:@screen-sm-min) {
+		height: 120px;
+		overflow: hidden;
+	}
+	@media (min-width:@screen-md-min) {
+		height: 160px;
+		font-size: 14px;
+		line-height: 20px;
+	}
+}
+.search-item-caption {
+	display: block;
+	background-color: @darkgray;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 6px;
+}
+.search-item-grades {
+	position: relative;
+	width: 150px;
+	padding: 6px;
+	left:-2px;
+	background-color: @lightestgray;
+	color: @mediumgray;
+	text-transform: uppercase;
+}
+.search-item-fave {
+	.lm {
+		font-size: 20px;
+		line-height: 12px;
+		color: @lightgray;
+		&:hover {
+			color: @lightestorange;
+		}
+	}
+}
+.search-item-provider {
+	padding-top: 2px;
+	margin-top: 12px;
+	border-top: 1px solid @bordergray;
+	height: 65px;
+	font-size: 13px;
+	font-weight: 500; 
+	color: @mediumgray;
+	span {
+		text-transform: uppercase;
+	}
+}
+.facets {
+	padding: 12px;
+	> .facet-container {
+		border-top: 1px solid @bordergray;
+		padding-left: 12px;
+	}
+}
+.facet-container {
+	display: none;
+	font-size: 14px;
+	padding-top: 6px;
+	li {
+		padding-left: 12px;
+	}
+	a {
+		.lm {
+			position: relative;
+			margin-left: -20px;
+		}
+	}
+	.js-open& {
+		display: block;
+	}
+        .facet-selected {
+            background-color: #f6f6f3;
+        }
+}
+.facet-grades {
+	label {
+		font-size: 14px;
+	}
+	li {
+		float: left;
+	}
+}

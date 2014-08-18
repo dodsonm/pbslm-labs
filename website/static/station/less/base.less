@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    BASE.LESS
+\*------------------------------------*/
+/**
+ * Welcome! This is the file you want to compile to make the site work!
+ *  1.  First things first, we include bootstrap.less. Thing is, it's
+ *      full of stuff we don't need -- yet. The plan is to activate the 
+ *      components as we need them, to reduce the size and complexity
+ *      of the CSS. We could edit bootstrap.less directly (it's in the
+ *      vendors/bootstrap/ folder) but tyhat makes upfrades difficult.
+ *      Instead, there's a duplicate in this folder called 
+ *      custom-bootstrap.less. Edit it to actovate components. If
+ *      bootstrap.less changes when upgrading bootstrap, edit this file
+ *      to refelect those changes.
+ *  2.  This reset is better than the Bootstrap version and 
+ *      overrides it.
+ *  3.  vars.less holds some global variables
+ *  4.  Put your mixins here
+ *  5.  An alternative Nav object, since Boostrap over-extends the 
+ *      standard nav object. This is the standard nav object, but it uses
+ *      an alternative 
+ *  6.  The Matrix object creates a grid form a list
+ *  7.  Imports our custom fonts and sets up the font stack
+ *  8.  Global colour variables
+ *  9.  global typography styles
+ * 10.  styles specifically dealing with responsive display changes
+ * 11.  sometimes bootstrap grids do silly things. overrides go here.
+ * 12.  Finally, LMsite specific styles. Here are global styles used 
+ *      everywhere in the site.
+ * 13.  site-header is the header and navigation used throughout the 
+ *      entire site
+ * 14.  search-bar is a page object used throughout the entire site
+ * 15.  footer is a page object used throughout the entire site
+ */
+
+@import 'custom-bootstrap';					/* 1.  */
+//@import 'partials/reset.less';				/* 2.  */
+@import 'partials/vars';					/* 3.  */
+@import 'partials/mixins';					/* 4.  */
+@import "objects/nav";						/* 5.  */
+@import "objects/matrix";					/* 6.  */
+@import 'modules/fonts';					/* 7.  */
+@import 'modules/colors';					/* 8.  */
+@import 'partials/typography';				/* 9.  */
+@import 'partials/responsive';				/* 10. */
+@import 'partials/grids';					/* 11. */
+@import 'partials/global';					/* 12. */
+@import 'objects/site-header.less';			/* 13. */
+@import 'objects/search-bar.less';			/* 14. */
+@import 'objects/footer.less';				/* 15. */
+@import 'objects/search.less';
+@import 'objects/bbstandards.less';
+@import 'objects/profile.less';
+@import 'objects/help.less';
+@import 'objects/credits.less';

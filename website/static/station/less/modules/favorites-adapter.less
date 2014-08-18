@@ -1,0 +1,79 @@
+// ADAPTERS
+
+// NEW COLORS
+// LM style guide colors from ARCT
+// Basing these names on standard HTML color names.
+
+// grays
+@ivory: #f7f6f3;
+@ghostwhite: #f8f7f4;
+
+@lightgray: #dce0e5;
+@gray: #c4cbd4;
+
+@lightslategray: #738496;
+@slategray: #566271;
+@darkslategray: #353d46;
+
+// yellows
+@gold: #ffc600;
+
+// oranges
+@lightorange: #fcb21c;
+@orange: #ff9900;
+@darkorange: #e68000;
+
+@seashell: #fef8e6;
+
+// reds
+@lightred: #ff6766;
+@red: #ff4747;
+
+// purples
+// TBD
+
+// greens
+@lightgreen: #98cc68;
+@green: #76b93c;
+@darkgreen: #639a32;
+
+// blues
+// TBD
+
+// NEW VARS
+@base-font-size: 16px;
+@body-text-color: @slategray;
+@standard-border: 1px solid @lightgray;
+@inner-border: 1px solid lighten(@lightgray, 5%);
+@secondary-link-color: @darkslategray;
+@secondary-link-hover-color: @darkorange;
+
+// LEGACY VARS & MIXIN ADAPTATIONS
+@button-background-color: white;
+@button-background-color-hover: lighten(#ccc, 3%);
+@confirm-button: @green;
+@confirm-button-hover: lighten(@green, 3%);
+@favorite-external-link-color: @darkorange;
+@favorite-title-color: @darkslategray;
+@item-border-color: lighten(@lightgray, 3%);
+@item-highlight-color: @seashell;
+@item-line-height: 1;
+@item-link-color: @darkorange;
+@link-color: @darkorange;
+@site-background-color: @ghostwhite;
+@standard-border-color: @lightgray;
+@static-url: '/';
+@steelblue: @slategray;
+@scrubber-texture: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAABwCAYAAAD4xZsFAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0NTE1NzZGREI5OTAxMUUyOUU0NEIzQUNDMzZGMDUyNSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0NTE1NzZGRUI5OTAxMUUyOUU0NEIzQUNDMzZGMDUyNSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ1MTU3NkZCQjk5MDExRTI5RTQ0QjNBQ0MzNkYwNTI1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQ1MTU3NkZDQjk5MDExRTI5RTQ0QjNBQ0MzNkYwNTI1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+KolTcQAABAVJREFUeNrsWF1IVFEQ3l0tSrQyhUCsQLAIYiUoNCMy0iIzQsp6KCgIFSELyi36wyCEoFpQyiykPyookYokQQMlSaMeghUye/AlISyjIJIydZsD34VxPOs57AZB3IGP485+zj1nZu7M2fGGw2FPrBLv/DEwMJBMyzJCT0ZGhtYycdTiJawm9BHvq1L4GKeL8IJw0PDgSvC6puyEZJaz4omRZLbgTzKSR1hBeGrYyQXCW8IbR8GPM0h4QhhnunWEx1gdGQdvULcTnZzBDhMJGyKRfOLzTPH5NuED4c50PG6kmfCdUMR0NwiLsDpSBF6zzkgenrDGcMRc8PJ0PtlFKCBcNBgJEuII7Y7C66R9hNxYCOP34ZtJQhlrFZ0rhC2E9VitoiPlHda+6UjcSBXhOcHPdAEcKcB0fvCqdEaqCWsJ+5gujMzkb/Ve8Kp10TmLHLhpOOItwipCi210ZuAfXhN+R4qOybENqB0Nto7VyTysc2yN5BPOEVKYbj9hN6GU6VLBy9c5VmXlfETiOHTfCPfEgw8TjsFwitxJJ5zXbThiN3idup1sx9s5Kv7JK/KkBUVqNJJjpYEAdEen45misxG7LbCNTjre1DimO0K4hNWROPDSdUY6cd4qpguhWYWE4RbuWG7kp1gjyS/Jixc9ZqnqxQYjdXiX+nU7+YIc4OEsRO0oFOWhG3yr8hhA7Rifrr36hNdTxff1cGq90KfyKHIjrYQhwk6mayJkYXWkBLxWnZEsfPYbjugHL0vnk23oavUGI+cJP3iemMrjEhRmVVffR9u8VE5sIqzEGlV5fIm1x/YFrCH0ErLFJScRqyPZ4NXojKhb43IRYg+c6BEhXs5vmfGijar0vmo44jVCJs9gU3QScCPoIIxE27waUTsaY2leE2I1GmlHoSlhujL4qUw4VvGe6XwygfbwSoRZlzvq+zD5xCd30oFWELS4+I2CbxUdVTe2wrmfo42OyonrptwxGRkSq9GI6vKP8Po7cgDFp5LpMsEr1RkJojCVi58lqsaOMV05eEGdkTr8GHpgOGITeHW20fGhofXrstY2OrV4am0s0VnMfihYGcnBZSZJOFFFqILpksDL0RUlFbYFIJ2G7iPhsniwMnCK8An8STvphfN6DUcMgRfS7WQzLr/DFiHuwPV0ik/GNAYq8OJVCP0wT0BTdHbgTS6xjU4yfml6me4k4S7hhLjX5oLvsZlaqCq2h3VC7dTCp5taGI7oTi3cqcX/OrXwer2xTy3gK3dq4U4t3KmFO7Vwpxbu1MKdWkQ3taB+nEDfxza1IAP/ZmpRjPOmGaYWaeAV6xyrbohz0bCc6j7CXzTIITQuFcWHuiuoMtBmOGIbeM1TohOL+Dx/Qf4IMADQGaV5lcdh+wAAAABJRU5ErkJggg==');
+
+/* used to drop notes below detail section (thumb + desc) */
+.clearFloat {
+    float: none;
+    width: 100%;
+}
+
+.svg-fallback-image (@url) {
+  .no-svg & {
+    background-image: url('@{url}');
+  }
+}

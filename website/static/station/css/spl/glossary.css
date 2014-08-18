@@ -1,0 +1,93 @@
+/* GLOSSARY TOOLTIP */
+
+.glossary_tooltip {
+    padding: 0px;
+    margin: 0px;
+    text-align: left;
+    position: absolute;
+    z-index: 10000;
+}
+
+.tooltip_top {
+    background: transparent url('../../images/tipTop_np.png') no-repeat top;
+    padding: 0px 0px 0px 0px;
+    padding-top: 32px;
+    margin-left: 0px;
+    width: 346px;
+    font-size: 11px;
+    color: #000;
+    background-position: 0 0;
+}
+.tipMid {
+    background: transparent url('../../images/tipMid.png') repeat-y;
+    padding: 0px 0px 10px 0px;
+    margin-top: 0px;
+    width: 346px;
+}
+
+.tipBtm {
+    background: transparent url('../../images/tipBot_cp.png') no-repeat bottom;
+    height: 34px;
+    padding: 0px;
+    width: 346px;
+}
+
+.gl_tooltip_content {
+    margin-top: 0px;
+    margin-left: 10px;
+    padding: 8px 12px 0px 12px;
+    width: 298px;
+    text-align: left;
+    line-height: 140%;
+    position: relative;
+}
+
+.gl_tooltip_content .gl_tooltip_term {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    color: #333333;
+    font-size: 12px;
+    line-height: 140%;
+}
+
+.gl_tooltip_content.gl_tooltip_definition {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    text-align: left;
+}
+
+.gl_tooltip_content p, #student_activity #sa_sec_intro .gl_tooltip_content p {
+    color: #333333;
+    line-height: 140%;
+    padding-top: 0px;
+    margin-top: 0px;
+    font-size: 12px;
+}
+
+.glossary_tooltip.right .tipBtm {
+    background: transparent url('../../images/tipBot_rp.png') no-repeat bottom;
+}
+
+.glossary_tooltip.left .tipBtm {
+    background: transparent url('../../images/tipBot_lp.png') no-repeat bottom;
+}
+
+.glossary_tooltip.bottom .tooltip_top {
+    background: transparent url('../../images/tipTop_cp.png') no-repeat top;
+}
+.glossary_tooltip.bottom .tipBtm {
+    background: transparent url('../../images/tipBot_np.png') no-repeat bottom;
+}
+
+.glossary_tooltip.bottom.left .tooltip_top {
+    background: transparent url('../../images/tipTop_lp.png') no-repeat top;
+}
+
+.glossary_tooltip.bottom.right .tooltip_top {
+    background: transparent url('../../images/tipTop_rp.png') no-repeat top;
+}
+
+.glossary_tooltip_trigger {
+    cursor: pointer;
+}

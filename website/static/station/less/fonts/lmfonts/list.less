@@ -1,0 +1,23 @@
+// List Icons
+// -------------------------
+
+.@{lm-css-prefix}-ul,
+.@{lmh-css-prefix}-ul,
+.@{ps-css-prefix}-ul {
+  padding-left: 0;
+  margin-left: @lm-li-width;
+  list-style-type: none;
+  > li { position: relative; }
+}
+.@{lm-css-prefix}-li,
+.@{lmh-css-prefix}-li,
+.@{ps-css-prefix}-li {
+  position: absolute;
+  left: -@lm-li-width;
+  width: @lm-li-width;
+  top: (2em / 14);
+  text-align: center;
+  &.@{lm-css-prefix}-lg {
+    left: -@lm-li-width + (4em / 14);
+  }
+}

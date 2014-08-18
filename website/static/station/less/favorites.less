@@ -1,0 +1,515 @@
+@import "base";
+@import "modules/favorites-adapter";
+@import "objects/favorites-legacy";
+
+// favorites resets, things from Bootstrap 2 that were removed in v3, etc.
+ul {
+  list-style: none;
+}
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+// main listing
+.listing {
+  padding-bottom: 30px;
+
+  li {
+    .clearfix();
+    &.folder {
+      min-height: 60px;
+    }
+  }
+  .illo {
+    figcaption {
+      width: 100%;
+    }
+  }
+  .detail {
+    border-right: none;
+    float: none;
+    position: relative;
+    width: 100%;
+
+    @media (min-width: @screen-md) {
+      border-right: @inner-border;
+      float: left;
+      width: 70%;
+    }
+    @media (min-width: @screen-lg) {
+      width: 65%;
+    }
+  }
+  .handle {
+    background: #ececec;
+    background-image: @scrubber-texture;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: @standard-border;
+    bottom: -1px;
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    display: none;
+    left: -1px;
+    height: auto;
+    position: absolute;
+    top: 25px;
+    width: 22px;
+
+    &:hover {
+      background-color: #e6e6e6;
+    }
+
+    body.folder & {
+      display: block;
+    }
+  }
+  &.ui-sortable-helper .handle {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+  .meta {
+    h3 {
+      font-size: @base-font-size;
+      line-height: 1em;
+      margin: 0;
+
+      a {
+        color: @secondary-link-color;
+
+        &:hover {
+          color: @secondary-link-hover-color;
+        }
+      }
+    }
+  }
+  .notes {
+    float: none;
+    position: relative;
+    width: 100%;
+
+    h2 {
+      background-color: @lightgray;
+      color: @darkslategray;
+      font-size: @base-font-size * 0.8125; //13px
+      font-weight: 700;
+      line-height: 2;
+      margin: 0;
+      padding: 2px 10px;
+      width: 100%;
+    }
+    textarea, p {
+      border: none;
+      color: @body-text-color;
+      display: inline-block;
+      font-size: @base-font-size * 0.75; //12px
+      height: 168px;
+      line-height: 1.5;
+      margin-bottom: 0;
+      padding: 10px;
+      resize: none;
+      text-align: left;
+      width: 100%;
+    }
+    textarea:focus {
+      color: @darkslategray;
+    }
+    .readonly & {
+      p {
+        height: auto;
+        margin-bottom: 0;
+      }
+    }
+    @media (min-width: @screen-md) {
+      float: left;
+      width: 29.999%;
+    }
+    @media (min-width: @screen-lg) {
+      width: 34.999%;
+    }
+  }
+  ul.folder-set {
+    .clearfix();
+    height: auto;
+    min-height: 40px;
+    padding-left: 24px;
+    position: relative;
+
+    &:before {
+      .lm;
+      content: '\0070';
+      font-size: 24px;
+      height: 2em;
+      left: 0;
+      margin: -3px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+
+    }
+    & > li {
+      background-color: @ghostwhite;
+      border-left: solid 5px @standard-border-color;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      float: left;
+      font-size: 12px;
+      margin: 5px;
+      padding: 0 0 5px 3px;
+
+      &:first-child {
+        background-color: transparent;
+        border-left: none;
+        display: none;
+        height: 27px;
+        margin: 0;
+        padding: 0;
+      }
+      .lm-cross-o {
+        font-size: @base-font-size;
+        position: relative;
+        top: 2px;
+      }
+    }
+    body.folder & {
+      margin-left: 15px;
+    }
+  }
+  .controls {
+    .head {
+      .clearfix();
+      border-bottom: solid 1px @item-border-color;
+
+      h2 {
+        color: @darkslategray;
+      }
+
+      p {
+        font-size: @base-font-size * 0.875; //14px;
+        margin: 0 15px 15px;
+      }
+    }
+    .mgmt-control {
+      padding-bottom: 3px;
+      .lm {
+        font-size: @base-font-size;
+        margin: 0;
+        position: relative;
+        top: 1px;
+      }
+    }
+  }
+  .folder-list {
+    .main-content {
+      font-size: @base-font-size * 0.875; //14px
+    }
+  }
+  .manage-folder-btn {
+    background-color: @lightslategray;
+    color: white;
+    display: block;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    width: 30px;
+
+    .lm {
+      font-size: 20px;
+      left: 6px;
+      margin: 0;
+      position: relative;
+      top: -5px;
+    }
+
+    &.edit {
+      top: 0;
+    }
+    &.share {
+      top: 35px;
+    }
+  }
+}
+
+// left rail
+.favorites .leftrail {
+  background-color: #fff;
+  border: @standard-border;
+  margin-bottom: 30px;
+
+  header {
+    h1 {
+      color: @darkslategray;
+      padding: 9px;
+    }
+    h2 {
+      padding: 10px;
+    }
+  }
+  h1, h2 {
+    border-bottom: @inner-border;
+    font-weight: 400;
+    line-height: 2;
+    margin: 0;
+  }
+  h1 {
+    font-size: @base-font-size;
+  }
+  h2 {
+    font-size: @base-font-size * 0.875; //14px
+  }
+  li {
+    border-top: @inner-border;
+    font-size: @base-font-size * 0.875; //14px
+    padding: 5px;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+  p {
+    color: @slategray;
+    font-size: @base-font-size * 0.8125; //13px
+  }
+  .folders-nav-heading {
+      background-color: @lightgray;
+      padding: 8px;
+  }
+  .folders-nav-heading,
+  header h1,
+  header h2,
+  li {
+    padding-left: 15px;
+  }
+  .active {
+    background-color: @item-highlight-color;
+  }
+  .count {
+    color: @slategray;
+  }
+  .lm-pencil {
+    display: none;
+  }
+  .controls {
+    border-top: @standard-border;
+    li {
+      border: none;
+      float: left;
+      padding: 0;
+      text-align: center;
+      width: 50%;
+
+      @media (min-width: @screen-sm) {
+        a {
+          font-size: @base-font-size * 0.75;
+          padding: 5px 0;
+
+          &::before, &::after {
+            display: none;
+          }
+        }
+      }
+      @media (min-width: @screen-md) {
+        a {
+          font-size: @base-font-size * 0.6875;
+          padding: 3px 0 7px;
+
+          &::before, &::after {
+            display: inline-block;
+          }
+        }
+      }
+      @media (min-width: @screen-lg) {
+        a {
+          font-size: @base-font-size * 0.875;
+        }
+      }
+    }
+    a {
+      color: white;
+      display: block;
+      font-size: @base-font-size * 0.875;
+      line-height: 1.5;
+      padding: 3px 0 7px;
+
+      &::before, &::after {
+        .lm;
+        font-size: @base-font-size;
+        margin: 0;
+      }
+    }
+    .new-folder {
+      a {
+        background-color: @orange;
+
+        &::before {
+          content: "\0041";
+          position: relative;
+          top: @base-font-size * 0.0625;
+        }
+      }
+    }
+    .manage-folders {
+      a {
+        background-color: white;
+        color: @darkorange;
+
+        &::before {
+          content: "\0070";
+        }
+        &::after {
+          content: "\004A";
+          position: relative;
+          top: @base-font-size * 0.125;
+        }
+      }
+    }
+  }
+}
+  .readonly & {
+    .folder-summary {
+        font-size: @base-font-size * 0.875; //14px
+        line-height: 1.5;
+
+        & > div {
+          padding: 10px;
+        }
+    }
+  }
+
+// modals
+body.favorites {
+  .modal {
+    margin: auto;
+    //max-width: 700px;
+    overflow: hidden;
+    top: 2%;
+    width: 98%;
+
+    @media (min-width: @screen-sm) {
+      top: 10%;
+      width: 60%;
+    }
+
+    h3, label, p {
+      margin: 0;
+    }
+    label {
+      display: block;
+      font-size: @base-font-size * 0.875;
+      font-weight: 400;
+    }
+    input[type='text'], textarea {
+      background-color: white;
+      border: @standard-border;
+      color: @body-text-color;
+      padding: 2px 5px;
+      width: 100%;
+    }
+    input[type='text'] {
+      line-height: 2;
+    }
+    textarea {
+      @rows: 5;
+      @line-height: 1.5;
+      height: @base-font-size * @line-height * @rows;
+      line-height: @line-height;
+      resize: none;
+
+      @media (min-height: 600px) {
+        @rows: 10;
+        height: @base-font-size * @line-height * @rows;
+      }
+    }
+  }
+  .modal-header {
+    h3 {
+      font-size: 25px;
+    }
+  }
+  .modal-body {
+    .clearfix();
+
+    p {
+      margin-bottom: @base-font-size;
+    }
+    ul.folders {
+      float: left;
+      font-size: @base-font-size * 0.8125; //13px
+      margin-right: @base-font-size * 1.5625; //25px
+      margin-bottom: @base-font-size;
+
+      li {
+        margin: 10px 0;
+      }
+    }
+  }
+  .modal-footer {
+    margin-top: 0;
+    .btn {
+      margin-bottom: 5px;
+    }
+  }
+  .btn-primary {
+    background-color: @orange;
+    border: 1px solid @darkorange;
+
+    &:hover {
+      background-color: @darkorange;
+    }
+  }
+  .btn-secondary {
+    background-color: white;
+    border: 1px solid @gray;
+    color: @darkorange;
+
+    &:hover {
+      background-color: @ivory;
+    }
+  }
+}
+.deleteModal {
+  .modal-footer {
+    .btn-primary {
+      //background: @confirm-button;
+
+      &:hover {
+        //background: @confirm-button-hover;
+      }
+    }
+    .btn {
+      float: left;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+// semantic grid layout
+body.favorites {
+  .wrapper {
+    .container();
+  }
+  .main {
+    .make-row();
+    .clearfix();
+    margin: 0 auto;
+
+    .leftrail {
+      .make-sm-column(4);
+
+      .nav-section {
+        .make-row();
+      }
+    }
+    .favorites-listing
+     {
+        .make-sm-column(12);
+    }
+  }
+}

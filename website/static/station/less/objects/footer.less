@@ -1,0 +1,347 @@
+/*------------------------------------*\
+    $FOOTER-HOLDER
+\*------------------------------------*/
+/**
+ * `.footer-holder` holds .resources-banners, .social-media and .footer
+ */
+
+ .footer-holder {
+	background-color: white;
+	border-bottom: 1px solid @lightgray;
+	border-top: 1px solid @lightgray;
+	margin-bottom: 12px;
+}
+
+
+
+
+
+/*------------------------------------*\
+    $RESOURCES-BANNERS
+\*------------------------------------*/
+/**
+ * `.resources-banners` is row of six logos
+ */
+
+@grayscalestring: ~"grayscale(100%)";
+
+.resources-banners {
+	position: relative;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	.flower {
+		color: @brightpink;
+		.fs-large;
+		margin: 0;
+	}
+
+	.flower, .homepage-header {
+		text-align: center;
+		@media (min-width: @screen-md-min) {
+			text-align: left;
+		}
+	}
+	h4 {
+		margin-top: 10px;
+	}
+}
+
+.resources-banners .flower{
+	&::before {
+		content: " ";
+		display: none;
+		position: absolute;
+		left: -44px;
+		top: 40px;
+		background-image: url(../images/homepage/hand-drawn-arrow.png);
+		background-repeat: no-repeat;
+		width: 40px;
+		height: 80px;
+		@media (min-width:(@screen-lg-min + 50px)) {
+			display: block;
+		}
+	}
+}
+
+.resources__resource-item {
+	margin-bottom: @gutter;
+	background-position: center center;
+	background-repeat: no-repeat;
+	.filter(@grayscalestring);
+	.opacity(0.5);
+	display: block;
+	height: 0;
+	padding-top: 75px;
+	overflow:hidden;
+	width: 100%;
+	//background-size: 150px auto;
+
+	@media (min-width: @screen-md-min) {
+		padding-top: 75px;
+		//background-size: 150px auto;
+	}
+	@media (min-width: @screen-lg-min) {
+		padding-top: 100px;
+		//background-size: 200px auto;
+	}
+
+	&:hover {
+		.filter(none);
+		.opacity(1);
+	}
+}
+
+.brands {
+	display: inline;
+	text-align: center;
+	@media (min-width: @screen-md-min) {
+		display: block;
+		height: 100px;
+	}
+}
+
+.brand-name {
+	display: inline-block;
+	overflow: hidden;
+	color: @darkgray;
+	&:hover {
+		text-decoration: none;
+	}
+	@media (min-width: @screen-md-min) {
+		height: 100%;
+		width: 100%;
+		vertical-align: middle;
+		width: 1px;
+		visibility: hidden;
+	}
+}
+
+.brand-img {
+	display: none;
+	vertical-align: middle;
+	max-width: 99%;
+	@media (min-width: @screen-md-min) {
+		display: inline-block;
+	}
+}
+
+/*------------------------------------*\
+    $SOCIAL-MEDIA
+\*------------------------------------*/
+/**
+ * `.social-media` is a grey bar that spans the width of the screen. It contains
+ * an inner element that holds a title, a row of icons, and a cute little bee.
+ * For 'social buzz'. Because bees 'buzz'. Get it? DO you see? Funny, right?
+ */
+
+.social-media {
+	background-color: @darkgray;
+	text-align: center;
+}
+
+.social-media__inner {
+	margin: 0 auto;
+	padding:36px 0;
+	@media (min-width: 480px) {
+		background-image: url(../images/bee.svg);
+		background-position: 85% 65%;
+		background-repeat: no-repeat;
+		background-size: 140px 68px;
+		.no-svg & {
+			background-image: url(../images/bee.png);
+		}
+	}
+	h2 {
+		color: #fff;
+		margin: 0 0 12px;
+	}
+
+}
+
+@icon-size: 53px;
+
+.social-media__link {
+	color: white;
+	text-decoration: none;
+	width: @icon-size;
+	height: @icon-size;
+	overflow: hidden;
+	display: inline-block;
+	margin: 0 (@gutter / 2);
+	&:hover {
+		color: @lighterorange;
+	}
+	i {
+		font-size: @icon-size;
+		padding: 0;
+		margin: 0;
+		line-height: 1;
+		width: @icon-size;
+		height: @icon-size;
+	}
+}
+
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+/**
+ * `.footer` sits at the bottom of every page. It contains the PBSLM logo,
+ *  contact details, secondary navigation, and when necessary, station-specific
+ *  affiliate logos. It looks like this:
+ *   +--------+---------------+---------------+------------------+
+ *   | (logo) | vcard         | secondary-nav | affiliate=-logos |
+ *   |        | __partnership |               |                  |
+ *   +--------+---------------+---------------+------------------+
+ *  In an attempt to make these elements reusable and OOCSS-compliant, the
+ *  items inside the footer have not been coupled to it using BEM syntax.
+ */
+
+@footer-forced-height: (@gutter * 8.5);
+
+.footer {
+	margin-left: (@gutter);
+	margin-right: @gutter;
+	text-align: center;
+	padding-top: 7px;
+	padding-bottom: 12px;
+	background-color: white;
+	color: @darkgray;
+	.fill-width;
+	@media (min-width: @screen-sm-min) {
+		text-align: left;
+		margin: 0 auto;
+		padding-bottom: 0;
+	}
+}
+
+.footer-logo {
+	width: 255px;
+	margin-top: 22px;
+	@media (min-width: @screen-sm-min) {
+		width: 100%;
+		height:auto;
+	}
+}
+.footer-logo-container {
+	margin-bottom:0;
+	text-align: center;
+	@media (min-width: @screen-sm-min) {
+		text-align: left;
+		margin-bottom: @gutter;
+	}
+}
+
+.adr {
+	.fs-base;
+	.normal;
+	line-height: 1.385;
+}
+
+.address-holder {
+	font-family: @conreg;
+	@media (min-width: @screen-sm-min) {
+		border-left: 1px solid @lightgray;
+		border-right: 1px solid @lightgray;
+		padding-left: @gutter;
+	}
+}
+.address-data, .partnership-holder {
+	display: inline-block;
+	text-align: left;
+	margin: 0 12px;
+	@media (min-width: @screen-sm-min) {
+		display: block;
+	}
+}
+
+.address-title {
+	.fs-base;
+	line-height: 1.786;
+	color: @darkestgray;
+	margin-bottom: 0.5em;
+	text-transform: uppercase;
+}
+
+.partnership {
+	text-transform: uppercase;
+}
+
+.secondary-nav {
+	display: none;
+	@media (min-width: @screen-sm-min) {
+		min-height: @footer-forced-height;
+		.fs-base;
+		line-height: 1.6;
+		display: inline-block;
+	}
+	@media (min-width: @screen-md-min) {
+		.fs-big;
+	}
+}
+
+.secondary-nav__nav--mobile {
+	@media (max-width: @screen-xs-max) {
+		padding-bottom: @gutter;
+	}
+}
+
+.secondary-nav__item,
+.matrix > .secondary-nav__item {
+	border: none;
+	padding: 0;
+	padding-bottom: 12px;
+	a {
+		text-decoration: none;
+		color: @lighterorange;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.secondary-nav__nav--mobile {
+	.secondary-nav__item {
+		text-align: left;
+		padding-left: @gutter;
+		padding-right: (@gutter / 2);
+		padding-top: (@gutter * 0.75);
+		padding-bottom: 0;
+		a {
+			text-transform: none;
+			color: @mediumgray;
+			text-align:left;
+		}
+	}
+}
+
+.affiliates {
+	display: none;
+	@media (min-width: @screen-md-min) {
+		display: inline;
+	}
+}
+
+.affiliate-logos {
+	word-wrap: break-word;
+	img {
+		max-width: 100%;
+	}
+}
+
+.copyright {
+	text-align:left;
+	color: @darkgray;
+	.fs-base;
+	.fill-width;
+	line-height: 1.5;
+	margin-left: @gutter;
+	margin-right: @gutter;
+	margin-bottom: @gutter;
+	padding-left: @gutter;
+	@media (min-width: @screen-sm-min) {
+		padding-left: 0;
+		margin: 0 auto;
+		margin-bottom: 1em;
+	}
+
+}
