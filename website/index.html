@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="static/student/css/main.css" />
 
 
-        <script src="static/bower_components/modernizr/modernizr.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
     </head>
      <body class="station">
 
@@ -85,14 +85,14 @@
     <main class="student-explorer container">
     
     <div class="slide">
-        <div class="left panel-cntr">
-            <div class="promo-panel panel">
-                <div class="front" style="
+        <div class="left card-cntr">
+            <div class="promo-card card">
+                <div class="front face" style="
                     background-image: url('static/student/img/kenny.png');
                 ">
 
                 </div>
-                <div class="back">
+                <div class="back face">
                     <h2>
                         Lorem Ipsum Dolor
                     </h2>
@@ -103,28 +103,28 @@
             </div>
         </div>
         <div class="right">
-            <div class="top panel-cntr">
-                <div class="subject-panel panel" style="
-                    background-color: lightpink;
-                    color: white;
-                ">
-                    <div class="front">
+            <div class="top card-cntr">
+                <div class="subject-card card">
+                    <div class="front face" style="
+                        background-color: lightpink;
+                        color: white;
+                    ">
                         <h2>Science</h2>
                     </div>
-                    <div class="back">
+                    <div class="back face">
                         <p>Explore the world of Science. <a href='#'>Check out these Science results</a></p>
                     </div>
                 </div>
             </div>
-            <div class="bottom panel-cntr">
-                <div class="subject-panel panel" style="
-                    background-color: beige;
-                    color: #555;
-                ">
-                    <div class="front">
+            <div class="bottom card-cntr">
+                <div class="subject-card card">
+                    <div class="front face" style="
+                        background-color: beige;
+                        color: #555;
+                    ">
                         <h2>Math</h2>
                     </div>
-                    <div class="back">
+                    <div class="back face">
                         <p>Explore the Math. <a href='#'>Check out these Math results</a></p>
                     </div>
                 </div>
@@ -133,14 +133,14 @@
     </div>
 
     <div class="slide">
-        <div class="left panel-cntr">
-            <div class="promo-panel panel">
-                <div class="front" style="
+        <div class="left card-cntr">
+            <div class="promo-card card">
+                <div class="front face" style="
                     background-image: url('static/student/img/cartman.png');
                 ">
 
                 </div>
-                <div class="back">
+                <div class="back face">
                     <h2>
                         Lorem Ipsum Dolor
                     </h2>
@@ -151,28 +151,28 @@
             </div>
         </div>
         <div class="right">
-            <div class="top panel-cntr">
-                <div class="subject-panel panel" style="
-                    background-color: powderblue;
-                    color: slategray;
-                ">
-                    <div class="front">
+            <div class="top card-cntr">
+                <div class="subject-card card">
+                    <div class="front face" style="
+                        background-color: powderblue;
+                        color: slategray;
+                    ">
                         <h2>Grammar</h2>
                     </div>
-                    <div class="back">
+                    <div class="back face">
                         <p>Explore the world of Grammar. <a href='#'>Check out these Grammar results</a></p>
                     </div>
                 </div>
             </div>
-            <div class="bottom panel-cntr">
-                <div class="subject-panel panel" style="
-                    background-color: #432200;
-                    color: white;
-                ">
-                    <div class="front">
+            <div class="bottom card-cntr">
+                <div class="subject-card card">
+                    <div class="front face" style="
+                        background-color: #432200;
+                        color: white;
+                    ">
                         <h2>Arts</h2>
                     </div>
-                    <div class="back">
+                    <div class="back face">
                         <p>Explore the Arts. <a href='#'>Check out these Arts results</a></p>
                     </div>
                 </div>
@@ -222,15 +222,17 @@
         
 
         <script>
-            $('.panel').on('touchstart', function () {
-                $('.panel').removeClass('hover');
-                $(this).addClass('hover');
+            $('.card').on('mouseover touchstart', function () {
+                $('.card').removeClass('flipped');
+                $(this).addClass('flipped');
             });
         </script>
 
         <!-- browser_sync -->
+        <!--
         <script src='http://127.0.0.1:3000/socket.io/socket.io.js'></script>
         <script src='http://127.0.0.1:3001/browser-sync-client.min.js'></script>
+        -->
 
     </body>
 </html>

@@ -3458,37 +3458,33 @@ menu {
 }
 .student-explorer div {
   position: relative;
-  overflow: visible;
 }
-.student-explorer .panel-cntr {
-  -webkit-perspective: 1000;
-  perspective: 1000;
+.student-explorer .card-cntr {
+  -webkit-perspective: 600px;
+  perspective: 600px;
 }
-.student-explorer .panel-cntr:hover .panel,
-.student-explorer .panel-cntr.hover .panel {
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-}
-.student-explorer .panel-cntr .panel {
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+.student-explorer .card-cntr .card {
+  -webkit-transition-duration: 0.6s;
+  transition-duration: 0.6s;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
 }
-.student-explorer .panel-cntr .panel .front,
-.student-explorer .panel-cntr .panel .back {
+.student-explorer .card-cntr .card .face {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   position: absolute;
   top: 0;
   left: 0;
 }
-.student-explorer .panel-cntr .panel .front {
-  z-index: 2;
+.student-explorer .card-cntr .card .back {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
-.student-explorer .panel-cntr .panel .back {
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
+.student-explorer .card-cntr .card.flipped {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
 .student-explorer .slide {
   position: relative;
@@ -3522,10 +3518,10 @@ menu {
   .student-explorer .slide {
     height: 320px;
   }
-  .student-explorer .slide .subject-panel {
+  .student-explorer .slide .subject-card {
     font-size: 14px;
   }
-  .student-explorer .slide .subject-panel h2 {
+  .student-explorer .slide .subject-card h2 {
     font-size: 22px!important;
   }
 }
@@ -3571,55 +3567,55 @@ menu {
   height: 50%;
   padding: 10px 5px;
 }
-.student-explorer .slide .panel {
+.student-explorer .slide .card {
   box-shadow: 1px 1px 2px 0 rgba(100, 100, 100, 0.4);
   height: 100%;
   width: 100%;
 }
-.student-explorer .slide .panel h2,
-.student-explorer .slide .panel p {
+.student-explorer .slide .card h2,
+.student-explorer .slide .card p {
   margin: 0;
   line-height: 1.5;
 }
-.student-explorer .slide .panel button {
+.student-explorer .slide .card button {
   background-color: #ff9900;
   color: white;
   margin-top: 10px;
 }
-.student-explorer .slide .panel .front,
-.student-explorer .slide .panel .back {
+.student-explorer .slide .card .front,
+.student-explorer .slide .card .back {
   height: 100%;
   width: 100%;
   padding: 20px;
 }
-.student-explorer .slide .panel .back a {
+.student-explorer .slide .card .back {
+  background-color: #566271;
+  color: white;
+}
+.student-explorer .slide .card .back a {
   display: block;
 }
-.student-explorer .slide .panel .back a:hover {
+.student-explorer .slide .card .back a:hover {
   color: #e68000;
   text-decoration: none;
 }
-.student-explorer .slide .panel .back a:after {
+.student-explorer .slide .card .back a:after {
   content: '\0046';
   font-family: lmbase2;
   margin: auto 5px;
   position: relative;
   top: 1px;
 }
-.student-explorer .slide .promo-panel h2 {
+.student-explorer .slide .promo-card h2 {
   font-weight: 300;
 }
-.student-explorer .slide .promo-panel .front {
+.student-explorer .slide .promo-card .front {
   background-color: #353d46;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-.student-explorer .slide .promo-panel .back {
-  background-color: rgba(100, 100, 100, 0.5);
-  color: white;
-}
-.student-explorer .slide .subject-panel h2 {
+.student-explorer .slide .subject-card h2 {
   font-size: 28px;
   text-transform: uppercase;
 }
